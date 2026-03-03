@@ -3,185 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qu'est-ce qu'un Ange Gardien? BINAEL | BINAEL</title>
-    <meta name="description" content="Découvrez le rôle des anges gardiens et comment BINAEL pourrait être votre guide spirituel.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>BINAEL : Votre Pont vers Votre Ange Gardien | BINAEL</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cormorant Garamond', serif; background: linear-gradient(180deg, #FFF, #F8FBFF, #F0F7FF); background-attachment: fixed; color: #2C5F8D; line-height: 1.8; }
+        h1, h2, h3 { font-family: 'Cinzel', serif; color: #4A90E2; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+        .navbar { background: rgba(255,255,255,0.95); border-bottom: 1px solid #E3F2FD; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { padding: 1rem 2rem; display: flex; align-items: center; gap: 1rem; }
+        .logo-svg { width: 40px; height: 40px; }
+        .logo-text { font-family: 'Cinzel', serif; font-size: 1.75rem; font-weight: 700; letter-spacing: 0.2em; background: linear-gradient(135deg, #4A90E2, #7CB9E8, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero { text-align: center; padding: 6rem 2rem 3rem; }
+        .hero h1 { margin-bottom: 1rem; font-size: 2.5rem; }
+        .hero-subtitle { font-size: 1.25rem; font-style: italic; color: #7CB9E8; margin-bottom: 3rem; }
+        section { padding: 3rem 0; }
+        .lead { font-size: 1.35rem; color: #2C5F8D; line-height: 2; margin: 2rem 0; font-weight: 400; }
+        .highlight-box { background: linear-gradient(135deg, #E3F2FD, rgba(255,215,0,0.1)); border: 2px solid #B8D8F0; border-radius: 16px; padding: 3rem; margin: 3rem 0; }
+        .highlight-box h2 { text-align: center; margin-bottom: 1.5rem; }
+        .quote { font-size: 1.5rem; font-style: italic; text-align: center; color: #4A90E2; margin: 3rem 0; padding: 2rem; border-left: 4px solid #4A90E2; background: #F8FBFF; }
+        .steps { margin: 3rem 0; }
+        .step { background: white; border: 1px solid #E3F2FD; border-radius: 12px; padding: 2rem; margin: 2rem 0; box-shadow: 0 2px 15px rgba(74,144,226,0.06); }
+        .step h3 { margin-bottom: 1rem; }
+        .religions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .religion-card { background: white; border: 1px solid #E3F2FD; border-radius: 12px; padding: 2rem; text-align: center; }
+        .religion-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .cta-final { background: linear-gradient(135deg, #4A90E2, #7CB9E8); color: white; border-radius: 24px; padding: 4rem 3rem; text-align: center; margin: 4rem 0; }
+        .cta-final h2 { color: white; margin-bottom: 1.5rem; }
+        .btn { padding: 1rem 2.5rem; font-family: 'Cinzel', serif; font-size: 0.875rem; letter-spacing: 0.15em; text-transform: uppercase; border: none; cursor: pointer; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-primary { background: white; color: #4A90E2; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,255,255,0.3); }
+        .btn-secondary { background: transparent; border: 2px solid white; color: white; }
+        ul { margin: 1rem 0 1rem 2rem; }
+        li { margin-bottom: 0.75rem; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo"><a href="index.html"><span class="logo-text">BINAEL</span></a></div>
-            <button class="burger-menu" id="burger-menu"><span></span><span></span><span></span></button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="ange-gardien.html" class="active">Ange Gardien</a></li>
-            </ul>
-            <div class="nav-cart"><a href="shop.html" class="cart-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-count">0</span></a></div>
+            <svg class="logo-svg" viewBox="0 0 300 300">
+                <g transform="translate(0,300) scale(0.1,-0.1)" fill="#FFD700">
+                    <path d="M1581 2621 c-12 -12 -21 -25 -21 -31 0 -16 -46 -12 -60 5 -18 21 -47 19 -60 -6 -11 -19 -13 -19 -29 -5 -24 22 -61 21 -61 -2 0 -16 11 -17 108 -17 90 0 111 3 126 18 21 21 40 22 56 2 7 -8 20 -15 30 -15 10 0 48 -13 84 -30 61 -27 66 -32 66 -60 0 -19 11 -46 27 -67 19 -25 29 -53 35 -100 8 -73 16 -87 64 -109 28 -14 34 -22 34 -49 0 -17 5 -47 11 -65 9 -24 9 -46 -1 -89 -18 -82 -28 -98 -79 -121 -87 -38 -96 -45 -99 -72 -2 -20 10 -41 54 -89 72 -82 119 -152 178 -265 41 -81 52 -94 96 -118 105 -57 125 -112 95 -261 -10 -49 -91 -161 -147 -205 -29 -22 -60 -46 -68 -53 -19 -17 -80 -38 -90 -32 -5 3 -11 1 -14 -4 -4 -5 -18 -8 -34 -6 -15 1 -30 -2 -34 -9 -6 -8 -12 -8 -26 1 -15 9 -22 9 -32 0 -10 -9 -11 -9 -5 2 6 11 -1 12 -34 6 -28 -5 -41 -3 -41 5 0 6 -5 8 -12 4 -6 -4 -16 -1 -22 7 -6 8 -32 23 -57 32 -61 23 -124 78 -170 149 -44 69 -67 140 -72 226 -5 84 -20 100 -79 83 -30 -9 -59 -30 -95 -67 -76 -78 -116 -69 -105 23 6 52 -16 83 -58 83 -39 0 -82 43 -74 74 5 19 -3 34 -36 70 -37 40 -42 50 -36 77 6 31 -20 83 -51 102 -19 11 -16 46 4 54 15 6 15 7 -3 13 -33 12 -54 0 -54 -32 0 -21 12 -40 45 -72 33 -33 41 -45 30 -50 -9 -3 -15 -18 -15 -35 0 -22 11 -39 44 -68 38 -34 43 -42 38 -71 -3 -25 1 -39 18 -57 23 -24 104 -50 122 -39 8 5 9 0 3 -17 -19 -59 -17 -107 4 -128 12 -12 31 -21 44 -21 33 0 90 42 112 84 11 21 27 36 38 36 10 0 31 7 46 15 l29 14 1 -77 c2 -279 260 -496 536 -452 201 32 358 187 395 388 15 84 1 131 -54 187 -24 23 -58 48 -77 54 -29 9 -40 22 -69 83 -50 104 -118 204 -190 281 -62 67 -72 97 -32 97 31 0 119 49 137 77 11 16 15 37 12 57 -4 25 -1 35 14 44 20 13 26 47 9 57 -5 3 -10 17 -10 31 0 13 -4 24 -10 24 -6 0 -7 18 -4 44 6 38 4 46 -15 55 -11 7 -21 9 -21 6 0 -3 -13 1 -30 10 -27 14 -30 20 -30 68 0 61 -29 130 -60 147 -16 9 -19 15 -11 23 15 15 14 52 -2 65 -7 6 -34 16 -60 23 -28 7 -60 24 -77 40 l-29 29 -3 -27 -3 -28 -15 30 c-19 37 -43 42 -69 16z"/>
+                </g>
+            </svg>
+            <a href="index.html" style="text-decoration: none;"><span class="logo-text">BINAEL</span></a>
         </div>
     </nav>
 
-    <div class="particles-container" id="particles"></div>
+    <div class="hero">
+        <h1>BINAEL : VOTRE PONT VERS VOTRE ANGE GARDIEN</h1>
+        <p class="hero-subtitle">La prise de conscience commence ici</p>
+    </div>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>QU'EST-CE QU'UN ANGE GARDIEN ?</h1>
-            <p class="page-subtitle">Protection • Guidance • Présence Bienveillante</p>
+    <div class="container">
+        <p class="lead">
+            Vous vous êtes déjà demandé :<br>
+            <em>"Ai-je vraiment un ange gardien ?"</em><br>
+            <em>"Comment puis-je le contacter ?"</em><br>
+            <em>"Comment savoir qu'il est là ?"</em>
+        </p>
+
+        <div class="quote">
+            "La réponse est simple : OUI, vous en avez un."
         </div>
-    </section>
 
-    <section class="content-section">
-        <div class="container-narrow">
-            <p class="lead">Depuis l'aube de l'humanité, chaque âme est accompagnée. Un guide. Un protecteur. Une présence bienveillante qui veille sur notre chemin.</p>
+        <section>
+            <h2>L'ANGE GARDIEN DANS TOUTES LES RELIGIONS</h2>
+            <p style="margin-top: 2rem;">Dans toutes les traditions spirituelles du monde, les anges gardiens existent. Ils ont des noms différents, mais leur rôle est le même : <strong>veiller sur vous</strong>.</p>
+
+            <div class="religions-grid">
+                <div class="religion-card">
+                    <div class="religion-icon">✝️</div>
+                    <h3>Christianisme</h3>
+                    <p style="font-size: 0.95rem; color: #5B8DB8;">"Car il donnera ordre à ses anges de te garder dans toutes tes voies." — Psaume 91:11</p>
+                </div>
+
+                <div class="religion-card">
+                    <div class="religion-icon">✡️</div>
+                    <h3>Judaïsme</h3>
+                    <p style="font-size: 0.95rem; color: #5B8DB8;">Dans la Kabbale, chaque personne a deux anges qui enregistrent ses actions.</p>
+                </div>
+
+                <div class="religion-card">
+                    <div class="religion-icon">☪️</div>
+                    <h3>Islam</h3>
+                    <p style="font-size: 0.95rem; color: #5B8DB8;">Kiraman Katibin : deux anges scribes qui notent vos bonnes et mauvaises actions.</p>
+                </div>
+
+                <div class="religion-card">
+                    <div class="religion-icon">🔥</div>
+                    <h3>Zoroastrisme</h3>
+                    <p style="font-size: 0.95rem; color: #5B8DB8;">Fravashi : l'esprit gardien qui existe avant la naissance et après la mort.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 1.25rem; text-align: center; color: #4A90E2;"><strong>Votre ange gardien a toujours été là. Vous commencez juste à le remarquer.</strong></p>
+        </section>
+
+        <section>
+            <h2>LE PROBLÈME : LE BRUIT DU MONDE</h2>
+            <p>Nous vivons dans le bruit.</p>
+            <p>Le bruit des notifications, des obligations, des distractions.</p>
+            <p>Et dans ce bruit, <strong>la voix de votre ange devient inaudible</strong>.</p>
+        </section>
+
+        <div class="highlight-box">
+            <h2>C'EST LÀ QU'INTERVIENT BINAEL</h2>
+            <p style="font-size: 1.25rem; text-align: center; margin-top: 2rem;">
+                <strong>BINAEL</strong> est l'ange de la <strong>Compréhension</strong>.<br>
+                Son rôle ? Vous aider à <strong>ENTENDRE</strong> votre ange gardien.
+            </p>
         </div>
-    </section>
 
-    <section class="content-section alt-bg">
-        <div class="container-narrow">
-            <h2>DÉFINITION & ORIGINE</h2>
-            <p>L'ange gardien est un esprit céleste assigné à chaque personne dès sa naissance pour la protéger et la guider tout au long de sa vie.</p>
-            
-            <h3>Dans les traditions</h3>
+        <section>
+            <h2>QUI EST BINAEL ?</h2>
+            <p><strong>BINAEL</strong> (de l'hébreu בינאל) trouve son origine dans la <strong>Kabbale</strong>, où il est associé à <strong>BINAH</strong> — la Séphirah de la Compréhension sur l'Arbre de Vie.</p>
+
+            <p style="margin-top: 1.5rem;"><strong>BIN-AEL</strong> signifie littéralement :</p>
             <ul>
-                <li><strong>Christianisme :</strong> Chaque personne a un ange gardien (Matthieu 18:10)</li>
-                <li><strong>Judaïsme (Kabbale) :</strong> Les anges gardiens veillent selon les Sephiroth</li>
-                <li><strong>Islam :</strong> Les Kiraman Katibin enregistrent nos actions</li>
-                <li><strong>Traditions ésotériques :</strong> Guides spirituels personnels</li>
+                <li><strong>BIN</strong> (בין) = Compréhension, Intelligence, Discernement</li>
+                <li><strong>AEL</strong> (אל) = Dieu, Divin</li>
             </ul>
-        </div>
-    </section>
 
-    <section class="content-section">
-        <div class="container-narrow">
-            <h2>RÔLE DE L'ANGE GARDIEN</h2>
-            <div class="role-grid">
-                <div class="role-card">
-                    <h3>🛡️ Protection</h3>
-                    <p>Protège contre les dangers physiques et spirituels</p>
-                </div>
-                <div class="role-card">
-                    <h3>🧭 Guidance</h3>
-                    <p>Guide vers les bonnes décisions et le bon chemin</p>
-                </div>
-                <div class="role-card">
-                    <h3>✨ Inspiration</h3>
-                    <p>Inspire pensées positives et intuitions</p>
-                </div>
-                <div class="role-card">
-                    <h3>🙏 Intercession</h3>
-                    <p>Intercède auprès du divin pour nos besoins</p>
-                </div>
-                <div class="role-card">
-                    <h3>🕊️ Accompagnement</h3>
-                    <p>Accompagne l'âme dans son évolution</p>
-                </div>
-                <div class="role-card">
-                    <h3>💫 Éveil</h3>
-                    <p>Éveille la conscience spirituelle</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <p style="margin-top: 1.5rem; font-size: 1.25rem; color: #4A90E2;"><strong>BINAEL = "Dieu de la Compréhension" ou "Intelligence Divine"</strong></p>
 
-    <section class="content-section alt-bg">
-        <div class="container-narrow">
-            <h2>COMMENT RECONNAÎTRE SON ANGE GARDIEN ?</h2>
-            
-            <h3>Les signes de présence</h3>
+            <p style="margin-top: 2rem;">BINAEL vous apporte :</p>
             <ul>
-                <li><strong>Intuitions soudaines :</strong> Voix intérieure qui vous guide</li>
-                <li><strong>Coïncidences répétées :</strong> Synchronicités significatives</li>
-                <li><strong>Rêves récurrents :</strong> Messages symboliques la nuit</li>
-                <li><strong>Sensations de présence :</strong> Chaleur, paix, protection</li>
-                <li><strong>Signes dans la nature :</strong> Plumes blanches, animaux, nombres</li>
-                <li><strong>Protection inexpliquée :</strong> Accidents évités de justesse</li>
+                <li><strong>L'éveil de la conscience</strong> — Il vous murmure : "Réveille-toi"</li>
+                <li><strong>La compréhension profonde</strong> — Il vous aide à voir au-delà des apparences</li>
+                <li><strong>L'accès à votre ange gardien</strong> — Il est le pont vers votre guidance</li>
+                <li><strong>Le discernement</strong> — Il affine votre intuition</li>
             </ul>
-        </div>
-    </section>
+        </section>
 
-    <section class="content-section binael-section">
-        <div class="container-narrow">
-            <div class="binael-box">
-                <div class="binael-icon">🪽</div>
-                <h2>QUI EST BINAEL ?</h2>
-                <p class="lead">Dans la tradition kabbalistique, Binaël (ou Binah) représente la compréhension profonde, la sagesse intérieure, l'intelligence spirituelle.</p>
-                
-                <h3>BINAEL est l'ange qui :</h3>
-                <ul>
-                    <li>✨ Éveille la conscience spirituelle</li>
-                    <li>🧠 Ouvre l'esprit aux mystères sacrés</li>
-                    <li>💖 Guide vers la vérité intérieure</li>
-                    <li>🪽 Protège le chemin d'éveil</li>
-                    <li>🔮 Révèle les connexions cachées</li>
-                    <li>🌟 Illumine le sens profond de l'existence</li>
-                </ul>
+        <section>
+            <h2>COMMENT BINAEL VOUS AIDE</h2>
 
-                <div class="binael-message">
-                    <p><em>"Porter BINAEL, c'est invoquer cette protection, cette guidance bienveillante dans votre quotidien. C'est porter un rappel de votre connexion au divin, de votre potentiel d'éveil."</em></p>
+            <div class="steps">
+                <div class="step">
+                    <h3>ÉTAPE 1 : CRÉER DES RAPPELS</h3>
+                    <p><strong>Porter BINAEL = micro-méditation quotidienne</strong></p>
+                    <p>Chaque fois que vous voyez votre t-shirt : <em>"Mon ange est là."</em></p>
+                    <p>Chaque fois que quelqu'un vous demande ce que signifie votre t-shirt : vous parlez d'ésotérisme, de spiritualité, d'anges.</p>
+                    <p>Vous sortez littéralement <strong>avec votre ange</strong>.</p>
                 </div>
 
-                <a href="shop.html" class="btn btn-primary">DÉCOUVRIR LA COLLECTION BINAEL</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-section">
-        <div class="container-narrow">
-            <h2>COMMENT COMMUNIQUER AVEC SON ANGE GARDIEN ?</h2>
-            
-            <div class="communication-methods">
-                <div class="method-card">
-                    <h3>🧘 Méditation</h3>
-                    <p>Méditez en silence, ouvrez votre cœur et votre esprit à la présence de votre ange. Posez vos questions et écoutez les réponses intuitives.</p>
+                <div class="step">
+                    <h3>ÉTAPE 2 : ÉVEILLER VOTRE INTUITION</h3>
+                    <p>Plus vous pensez à votre ange, plus vous le percevez.</p>
+                    <p>C'est une question d'<strong>attention</strong>.</p>
+                    <p>Vous commencez à remarquer :</p>
+                    <ul>
+                        <li>Les nombres répétés (111, 222, 333...)</li>
+                        <li>Les plumes blanches qui apparaissent</li>
+                        <li>Les rêves significatifs</li>
+                        <li>Les "coïncidences" synchronistiques</li>
+                        <li>Cette voix intérieure qui vous guide</li>
+                    </ul>
                 </div>
 
-                <div class="method-card">
-                    <h3>🙏 Prière</h3>
-                    <p>Adressez-vous directement à votre ange gardien. Parlez-lui comme à un ami proche. Demandez guidance et protection.</p>
-                </div>
-
-                <div class="method-card">
-                    <h3>✍️ Écriture Automatique</h3>
-                    <p>Posez une question par écrit, puis laissez votre main écrire librement sans réfléchir. Les messages peuvent venir ainsi.</p>
-                </div>
-
-                <div class="method-card">
-                    <h3>💤 Rêves</h3>
-                    <p>Avant de dormir, demandez à votre ange de vous visiter en rêve. Tenez un journal de vos rêves au réveil.</p>
-                </div>
-
-                <div class="method-card">
-                    <h3>🔮 Signes & Symboles</h3>
-                    <p>Restez attentif aux signes autour de vous : nombres répétés (111, 222), plumes, sensations soudaines.</p>
+                <div class="step">
+                    <h3>ÉTAPE 3 : OUVRIR DES PORTES</h3>
+                    <p>Les synchronicités se multiplient.</p>
+                    <p>Les bonnes personnes apparaissent au bon moment.</p>
+                    <p>Votre guidance intérieure s'amplifie.</p>
+                    <p>Vous n'êtes plus perdu — vous êtes <strong>guidé</strong>.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="cta-section">
-        <div class="container-narrow">
-            <div class="cta-box">
-                <h2>Découvrez votre ange gardien personnel</h2>
-                <p>Faites le quiz pour savoir quelle hiérarchie angélique vous correspond</p>
-                <a href="quiz.html" class="btn btn-primary">FAIRE LE QUIZ</a>
-            </div>
-        </div>
-    </section>
+        <section>
+            <h2>LE TRAVAIL SUR SOI AVEC BINAEL</h2>
+            <p>Votre ange gardien ne fait pas le travail à votre place.</p>
+            <p>Il vous <strong>guide</strong>. Mais c'est à vous de <strong>marcher</strong>.</p>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col"><h4>SHOP</h4><ul><li><a href="shop.html">Collection</a></li></ul></div>
-                <div class="footer-col"><h4>UNIVERS</h4><ul><li><a href="ange-gardien.html">Ange Gardien</a></li></ul></div>
-            </div>
-            <div class="footer-bottom">
-                <div class="disclaimer">⚠️ <strong>FICTION ÉSOTÉRIQUE</strong></div>
-                <div class="copyright"><p>BINAEL © 2026 • Porter • Partager • Profiter</p></div>
-            </div>
+            <p style="margin-top: 2rem;"><strong>BINAEL vous invite à l'introspection :</strong></p>
+            <ul>
+                <li>Qu'est-ce qui se répète dans ma vie ?</li>
+                <li>Quelles leçons n'ai-je pas encore apprises ?</li>
+                <li>Où est-ce que je me sabote moi-même ?</li>
+                <li>Qui suis-je vraiment, au-delà des rôles sociaux ?</li>
+                <li>Quelle est ma mission de vie ?</li>
+                <li>Qu'est-ce qui fait vibrer mon âme ?</li>
+            </ul>
+
+            <p style="margin-top: 2rem;">Porter BINAEL, c'est choisir de <strong>ne plus vivre en pilote automatique</strong>.</p>
+            <p>C'est faire de votre vie une <strong>pratique spirituelle</strong>.</p>
+        </section>
+
+        <div class="quote">
+            "Votre ange gardien a toujours été là.<br>
+            Vous commencez juste à le remarquer.<br><br>
+            Et c'est ça, l'éveil."
         </div>
+
+        <div class="cta-final">
+            <h2>PRÊT À RENCONTRER VOTRE ANGE ?</h2>
+            <p style="color: white; font-size: 1.125rem; margin-bottom: 2rem;">
+                Découvrez quel ange vous appelle à travers notre collection
+            </p>
+            <a href="shop.html" class="btn btn-primary" style="margin-right: 1rem;">VOIR LA COLLECTION</a>
+            <a href="quiz.html" class="btn btn-secondary">FAIRE LE QUIZ</a>
+        </div>
+    </div>
+
+    <footer style="background: #F8FBFF; border-top: 1px solid #E3F2FD; padding: 3rem 0; text-align: center; margin-top: 4rem;">
+        <p style="color: #5B8DB8; font-size: 0.875rem;">BINAEL © 2026 • Porter • Partager • Profiter</p>
     </footer>
-    <script src="js/script.js"></script>
 </body>
 </html>
