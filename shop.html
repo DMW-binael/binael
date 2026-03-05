@@ -98,6 +98,10 @@
         .disclaimer { background: #E3F2FD; border: 1px solid #B8D8F0; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; font-size: 0.95rem; text-align: center; }
         .disclaimer strong { color: #4A90E2; }
 
+
+        .lang-btn { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em; background: #E3F2FD; border: 1px solid #B8D8F0; color: #4A90E2; padding: 0.4rem 0.9rem; border-radius: 20px; cursor: pointer; transition: 0.2s; white-space: nowrap; }
+        .lang-btn:hover { background: #4A90E2; color: white; }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
         @media (max-width: 768px) {
             .burger { display: flex; }
             .nav-menu { display: none; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); justify-content: center; align-items: center; gap: 2.5rem; z-index: 1050; }
@@ -116,8 +120,9 @@
                 <img src="logo.svg" alt="BINAEL" class="logo-svg">
                 <a href="index.html" class="logo-text">BINAEL</a>
             </div>
+            <div class="nav-right">
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
                 <li><a href="shop.html" class="active">Shop</a></li>
                 <li><a href="quiz.html">Quiz</a></li>
                 <li><a href="ange-gardien.html">Ange Gardien</a></li>
@@ -127,14 +132,16 @@
             <button class="burger" id="burger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
+            <button class="lang-btn" id="lang-toggle" onclick="toggleLang()">🇬🇧 EN</button>
+        </div>
         </div>
     </nav>
 
     <section class="page-header">
         <div class="container">
-            <h1>COLLECTION AWAKENING</h1>
-            <p class="page-subtitle">6 Designs • Adultes & Enfants • Coton bio 100%</p>
-            <p style="font-style: italic; color: #7CB9E8; margin-top: 0.5rem;">Porter • Partager • Profiter</p>
+            <h1 data-fr="COLLECTION AWAKENING" data-en="AWAKENING COLLECTION">COLLECTION AWAKENING</h1>
+            <p class="page-subtitle" data-fr="6 Designs • Adultes & Enfants • Coton bio 100%" data-en="6 Designs • Adults & Children • 100% Organic Cotton">6 Designs • Adultes & Enfants • Coton bio 100%</p>
+            <p style="font-style: italic; color: #7CB9E8; margin-top: 0.5rem;" data-fr="Porter • Partager • Profiter" data-en="Wear • Share • Thrive">Porter • Partager • Profiter</p>
         </div>
     </section>
 
@@ -152,9 +159,9 @@
                         <h3>L'ANGE DORÉ</h3>
                         <p class="product-desc">Le gardien bienveillant — L'Appel de l'éveil</p>
                         <div class="size-selector">
-                            <span class="size-label">Choisir une taille</span>
+                            <span class="size-label" data-fr="Choisir une taille" data-en="Choose a size">Choisir une taille</span>
                             <div class="size-group">
-                                <span class="size-group-label">Adulte — 29€</span>
+                                <span class="size-group-label" data-fr="Adulte — 29€" data-en="Adult — €29">Adulte — 29€</span>
                                 <div class="size-buttons">
                                     <button class="size-btn" onclick="selectSize(this)">S</button>
                                     <button class="size-btn" onclick="selectSize(this)">M</button>
@@ -165,7 +172,7 @@
                             </div>
                             <div class="size-separator"></div>
                             <div class="size-group">
-                                <span class="size-group-label">Enfant — 24€</span>
+                                <span class="size-group-label" data-fr="Enfant — 24€" data-en="Child — €24">Enfant — 24€</span>
                                 <div class="size-buttons">
                                     <button class="size-btn" onclick="selectSize(this)">3-4 ans</button>
                                     <button class="size-btn" onclick="selectSize(this)">5-6 ans</button>
@@ -336,7 +343,7 @@
                         <h3>SERAPHIM FIRE</h3>
                         <p class="product-desc">Le feu purificateur — La Transformation</p>
                         <div class="size-selector">
-                            <span class="size-label">Disponible bientôt</span>
+                            <span class="size-label" data-fr="Disponible bientôt" data-en="Coming soon">Disponible bientôt</span>
                             <div class="size-group">
                                 <span class="size-group-label">Adulte — 29€</span>
                                 <div class="size-buttons">
@@ -429,14 +436,14 @@
         <div class="container">
             <div class="bundle-box">
                 <span class="bundle-badge">✨ PACK DUO FAMILLE</span>
-                <h2 style="margin-bottom: 0.5rem; margin-top: 1rem;">PARENT + ENFANT</h2>
-                <p style="color: #5B8DB8; margin-bottom: 2rem;">1 T-shirt adulte + 1 T-shirt enfant • Même design</p>
+                <h2 style="margin-bottom: 0.5rem; margin-top: 1rem;" data-fr="PARENT + ENFANT" data-en="PARENT + CHILD">PARENT + ENFANT</h2>
+                <p style="color: #5B8DB8; margin-bottom: 2rem;" data-fr="1 T-shirt adulte + 1 T-shirt enfant • Même design" data-en="1 adult T-shirt + 1 child T-shirt • Same design">1 T-shirt adulte + 1 T-shirt enfant • Même design</p>
                 <div class="bundle-price">
                     <span class="price-old">53€</span>
                     <span class="price-new">49€</span>
                 </div>
-                <a href="#" class="btn btn-primary">CRÉER MON DUO</a>
-                <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #5B8DB8;">L'éveil en famille • Économisez 4€ 🪽</p>
+                <a href="#" class="btn btn-primary" data-fr="CRÉER MON DUO" data-en="CREATE MY DUO">CRÉER MON DUO</a>
+                <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #5B8DB8;" data-fr="L'éveil en famille • Économisez 4€ 🪽" data-en="Family awakening • Save €4 🪽">L'éveil en famille • Économisez 4€ 🪽</p>
             </div>
         </div>
     </section>
@@ -447,23 +454,23 @@
             <div class="info-grid">
                 <div class="info-item">
                     <div class="info-icon">🚚</div>
-                    <h4 style="font-family:'Cinzel',serif;color:#4A90E2;margin-bottom:0.5rem;">Livraison Offerte</h4>
-                    <p style="font-size:0.95rem;color:#5B8DB8;">Dès 50€ d'achat</p>
+                    <h4 style="font-family:'Cinzel',serif;color:#4A90E2;margin-bottom:0.5rem;" data-fr="Livraison Offerte" data-en="Free Shipping">Livraison Offerte</h4>
+                    <p style="font-size:0.95rem;color:#5B8DB8;" data-fr="Dès 50€ d'achat" data-en="On orders over €50">Dès 50€ d'achat</p>
                 </div>
                 <div class="info-item">
                     <div class="info-icon">↩️</div>
-                    <h4 style="font-family:'Cinzel',serif;color:#4A90E2;margin-bottom:0.5rem;">Retours Gratuits</h4>
-                    <p style="font-size:0.95rem;color:#5B8DB8;">30 jours pour changer d'avis</p>
+                    <h4 style="font-family:'Cinzel',serif;color:#4A90E2;margin-bottom:0.5rem;" data-fr="Retours Gratuits" data-en="Free Returns">Retours Gratuits</h4>
+                    <p style="font-size:0.95rem;color:#5B8DB8;" data-fr="30 jours pour changer d'avis" data-en="30 days to change your mind">30 jours pour changer d'avis</p>
                 </div>
                 <div class="info-item">
                     <div class="info-icon">✓</div>
-                    <h4 style="font-family:'Cinzel',serif;color:#4A90E2;margin-bottom:0.5rem;">Qualité Premium</h4>
+                    <h4 style="font-family:'Cinzel',serif;color:#4A90E2;margin-bottom:0.5rem;" data-fr="Qualité Premium" data-en="Premium Quality">Qualité Premium</h4>
                     <p style="font-size:0.95rem;color:#5B8DB8;">Coton bio 100% certifié</p>
                 </div>
                 <div class="info-item">
                     <div class="info-icon">🌍</div>
                     <h4 style="font-family:'Cinzel',serif;color:#4A90E2;margin-bottom:0.5rem;">Made in Europe</h4>
-                    <p style="font-size:0.95rem;color:#5B8DB8;">Production éthique locale</p>
+                    <p style="font-size:0.95rem;color:#5B8DB8;" data-fr="Production éthique locale" data-en="Local ethical production">Production éthique locale</p>
                 </div>
             </div>
         </div>
@@ -476,7 +483,7 @@
                 <div class="footer-col"><h4>UNIVERS</h4><ul><li><a href="ange-gardien.html">Qui est BINAEL?</a></li><li><a href="hierarchies.html">Hiérarchies</a></li><li><a href="quiz.html">Quiz</a></li></ul></div>
                 <div class="footer-col"><h4>INFORMATIONS</h4><ul><li><a href="qualite.html">Qualité</a></li><li><a href="legal.html">Legal</a></li></ul></div>
             </div>
-            <div class="disclaimer">⚠️ <strong>FICTION ÉSOTÉRIQUE</strong><br>BINAEL est un univers de FICTION basé sur des traditions mystiques.</div>
+            <div class="disclaimer">⚠️ <strong data-fr="FICTION ÉSOTÉRIQUE" data-en="ESOTERIC FICTION">FICTION ÉSOTÉRIQUE</strong><br>BINAEL est un univers de FICTION basé sur des traditions mystiques.</div>
             <div style="text-align:center;font-size:0.875rem;color:#5B8DB8;"><p>BINAEL © 2026 • Porter • Partager • Profiter</p></div>
         </div>
     </footer>
@@ -508,6 +515,23 @@
             const isKids = group.querySelector('.size-group-label').textContent.includes('Enfant');
             priceEl.textContent = isKids ? '24€' : '29€';
         }
-    </script>
+    
+    // Language system
+    function getLang() { return localStorage.getItem('binael_lang') || 'fr'; }
+    function setLang(lang) { localStorage.setItem('binael_lang', lang); applyLang(lang); updateLangBtn(lang); }
+    function toggleLang() { setLang(getLang() === 'fr' ? 'en' : 'fr'); }
+    function applyLang(lang) {
+        document.querySelectorAll('[data-fr]').forEach(el => {
+            const text = el.getAttribute('data-' + lang);
+            if (text) el.innerHTML = text;
+        });
+        document.documentElement.lang = lang;
+    }
+    function updateLangBtn(lang) {
+        const btn = document.getElementById('lang-toggle');
+        if (btn) btn.innerHTML = lang === 'fr' ? '🇬🇧 EN' : '🇫🇷 FR';
+    }
+    const _lang = getLang(); applyLang(_lang); updateLangBtn(_lang);
+</script>
 </body>
 </html>
