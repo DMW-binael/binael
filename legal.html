@@ -2,132 +2,341 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentions Légales & CGV | BINAEL</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Cormorant Garamond', serif; background: linear-gradient(180deg, #FFF, #F8FBFF); background-attachment: fixed; color: #2C5F8D; line-height: 1.7; }
-        h1, h2, h3 { font-family: 'Cinzel', serif; color: #4A90E2; margin-bottom: 1rem; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
-        .navbar { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #E3F2FD; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(74,144,226,0.08); }
-        .nav-container { padding: 1rem 2rem; }
-        .logo-text { font-family: 'Cinzel', serif; font-size: 1.75rem; font-weight: 700; letter-spacing: 0.2em; background: linear-gradient(135deg, #4A90E2, #7CB9E8, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .page-header { text-align: center; padding: 6rem 2rem 3rem; }
-        section { padding: 3rem 0; }
-        .legal-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; padding: 2rem 0; border-bottom: 1px solid #E3F2FD; }
-        .legal-nav a { color: #4A90E2; text-decoration: none; font-family: 'Cinzel', serif; font-size: 0.875rem; letter-spacing: 0.1em; }
-        .legal-box { background: white; border: 1px solid #E3F2FD; border-radius: 12px; padding: 2rem; margin: 2rem 0; }
-        .disclaimer-box { background: #E3F2FD; border: 2px solid #B8D8F0; border-radius: 12px; padding: 2rem; margin: 2rem 0; }
-        ul { margin: 1rem 0 1rem 2rem; }
-        li { margin-bottom: 0.5rem; }
+        body { font-family: 'Cormorant Garamond', serif; background: linear-gradient(180deg, #FFF 0%, #F8FBFF 100%); background-attachment: fixed; color: #2C5F8D; line-height: 1.9; }
+        h1, h2, h3 { font-family: 'Cinzel', serif; color: #4A90E2; }
+        p { font-size: 1.05rem; margin-bottom: 1rem; color: #5B8DB8; }
+        ul { margin: 0.75rem 0 1.25rem 2rem; color: #5B8DB8; font-size: 1.05rem; }
+        ul li { margin-bottom: 0.5rem; }
+        strong { color: #2C5F8D; }
+        a { color: #4A90E2; }
+
+        /* NAVBAR */
+        .navbar { background: rgba(255,255,255,0.97); border-bottom: 1px solid #E3F2FD; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(74,144,226,0.08); }
+        .nav-container { padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .nav-left { display: flex; align-items: center; gap: 1rem; }
+        .logo-text { font-family: 'Cinzel', serif; font-size: 1.75rem; font-weight: 700; letter-spacing: 0.2em; background: linear-gradient(135deg, #4A90E2, #7CB9E8, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-menu { display: flex; gap: 2rem; list-style: none; }
+        .nav-menu a { font-family: 'Cinzel', serif; font-size: 0.875rem; letter-spacing: 0.12em; text-transform: uppercase; color: #2C5F8D; text-decoration: none; transition: color 0.2s; }
+        .nav-menu a:hover { color: #4A90E2; }
+        .lang-btn { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em; background: #E3F2FD; border: 1px solid #B8D8F0; color: #4A90E2; padding: 0.4rem 0.9rem; border-radius: 20px; cursor: pointer; transition: 0.2s; white-space: nowrap; }
+        .lang-btn:hover { background: #4A90E2; color: white; }
+        .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 5px; z-index: 1100; }
+        .burger span { display: block; width: 25px; height: 2px; background: #2C5F8D; border-radius: 2px; transition: 0.3s; }
+        .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .burger.open span:nth-child(2) { opacity: 0; }
+        .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* HEADER */
+        .page-header { background: linear-gradient(135deg, #2C5F8D, #4A90E2); padding: 5rem 2rem 4rem; text-align: center; }
+        .page-header h1 { color: white; font-size: clamp(1.75rem, 4vw, 3rem); margin-bottom: 1rem; }
+        .page-header p { color: rgba(255,255,255,0.85); font-size: 1rem; margin: 0; }
+
+        /* NAV INTERNE */
+        .legal-nav { background: white; border-bottom: 1px solid #E3F2FD; padding: 1rem 2rem; display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; position: sticky; top: 73px; z-index: 900; }
+        .legal-nav a { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #5B8DB8; text-decoration: none; padding: 0.4rem 0.8rem; border-radius: 20px; border: 1px solid #E3F2FD; transition: 0.2s; white-space: nowrap; }
+        .legal-nav a:hover { background: #E3F2FD; color: #4A90E2; }
+
+        /* CONTENU */
+        .legal-body { max-width: 860px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+        .legal-section { margin-bottom: 4rem; padding-bottom: 3rem; border-bottom: 1px solid #E3F2FD; }
+        .legal-section:last-child { border-bottom: none; }
+        .legal-section h2 { font-size: 1.5rem; margin-bottom: 2rem; padding-bottom: 0.75rem; border-bottom: 2px solid #E3F2FD; }
+        .legal-section h3 { font-size: 1.1rem; margin: 1.75rem 0 0.75rem; color: #2C5F8D; }
+        .placeholder { background: #FFF3CD; border: 1px solid #FFD700; border-radius: 6px; padding: 0.2rem 0.6rem; font-family: monospace; font-size: 0.9rem; color: #856404; font-weight: 700; }
+        .important-box { background: #E3F2FD; border-left: 4px solid #4A90E2; border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+        .important-box p { margin: 0; font-size: 1rem; }
+        .fiction-box { background: linear-gradient(135deg, #FFF3E0, #FFF8E1); border: 2px solid #FFD700; border-radius: 12px; padding: 1.5rem 2rem; margin: 1.5rem 0; }
+        .fiction-box strong { color: #E65100; }
+
+        /* FOOTER */
+        .footer { background: #F8FBFF; border-top: 2px solid #E3F2FD; padding: 3rem 0 2rem; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2.5rem; margin-bottom: 2rem; }
+        .footer-col h4 { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.15em; margin-bottom: 1rem; color: #4A90E2; }
+        .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col ul li a { color: #5B8DB8; text-decoration: none; font-size: 0.9rem; }
+        .disclaimer { background: #E3F2FD; border: 1px solid #B8D8F0; border-radius: 10px; padding: 1rem 1.5rem; margin-bottom: 1.5rem; font-size: 0.9rem; text-align: center; }
+        .disclaimer strong { color: #4A90E2; }
+
+        @media (max-width: 768px) {
+            .burger { display: flex; }
+            .nav-menu { display: none; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); justify-content: center; align-items: center; gap: 2.5rem; z-index: 1050; }
+            .nav-menu.open { display: flex; }
+            .nav-menu a { font-size: 1.25rem; }
+            .legal-nav { top: 65px; gap: 0.75rem; }
+            .legal-body { padding: 2.5rem 1.25rem 4rem; }
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" style="text-decoration: none;"><span class="logo-text">BINAEL</span></a>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-left">
+            <a href="index.html" class="logo-text">BINAEL</a>
         </div>
-    </nav>
-
-    <div class="page-header">
-        <h1>MENTIONS LÉGALES & CGV</h1>
-    </div>
-
-    <div class="container">
-        <nav class="legal-nav">
-            <a href="#mentions">Mentions</a>
-            <a href="#cgv">CGV</a>
-            <a href="#retours">Retours</a>
-            <a href="#faq">FAQ</a>
-        </nav>
-
-        <section id="mentions">
-            <h2>MENTIONS LÉGALES</h2>
-            <div class="legal-box">
-                <p><strong>BINAEL</strong></p>
-                <p>SIRET : [À compléter]</p>
-                <p>Siège social : [Adresse]</p>
-                <p>Email : contact@binael.fr</p>
-                <p>Hébergeur : GitHub Pages / Shopify</p>
-            </div>
-
-            <div class="disclaimer-box">
-                <h3>⚠️ DISCLAIMER FICTION ÉSOTÉRIQUE</h3>
-                <p><strong>BINAEL est une œuvre de FICTION</strong> basée sur des traditions mystiques.</p>
-                <p>Les symboles et concepts présentés sont des <strong>INTERPRÉTATIONS ARTISTIQUES</strong> et ne constituent ni une religion, ni des affirmations factuelles, ni des pratiques occultes.</p>
-            </div>
-        </section>
-
-        <section id="cgv">
-            <h2>CONDITIONS GÉNÉRALES DE VENTE</h2>
-            
-            <h3>1. PRODUITS</h3>
-            <p>T-shirts en coton bio 100%, éditions limitées à 100 pièces numérotées.</p>
-
-            <h3>2. PRIX</h3>
-            <p>Prix TTC en euros. Frais de port en sus.</p>
-
-            <h3>3. LIVRAISON</h3>
-            <ul>
-                <li><strong>France :</strong> 4,90€ (gratuit dès 50€)</li>
-                <li><strong>Europe :</strong> 9,90€ (gratuit dès 80€)</li>
-                <li><strong>Délai :</strong> 5-7 jours ouvrés</li>
+        <div class="nav-right">
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="ange-gardien.html" data-fr="Ange Gardien" data-en="Guardian Angel">Ange Gardien</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="hierarchies.html" data-fr="Hiérarchies" data-en="Hierarchies">Hiérarchies</a></li>
             </ul>
-
-            <h3>4. PAIEMENT</h3>
-            <p>Carte bancaire, PayPal via Shopify Payments.</p>
-        </section>
-
-        <section id="retours">
-            <h2>POLITIQUE DE RETOUR</h2>
-            
-            <h3>Comment retourner ?</h3>
-            <ol>
-                <li>Contactez retours@binael.fr</li>
-                <li>Recevez votre étiquette</li>
-                <li>Renvoyez sous 14 jours</li>
-                <li>Remboursement sous 14 jours</li>
-            </ol>
-
-            <h3>Conditions</h3>
-            <ul>
-                <li>✓ Produit non porté</li>
-                <li>✓ Étiquettes attachées</li>
-                <li>✓ Emballage d'origine</li>
-            </ul>
-        </section>
-
-        <section id="faq">
-            <h2>FAQ</h2>
-            
-            <h3>📦 Livraison</h3>
-            <p><strong>Q: Délais de livraison ?</strong><br>R: 5-7 jours ouvrés en France.</p>
-
-            <h3>👕 Produits</h3>
-            <p><strong>Q: Les t-shirts taillent normalement ?</strong><br>R: Oui, taille européenne standard.</p>
-
-            <p><strong>Q: Composition ?</strong><br>R: 100% coton bio certifié GOTS, 180g/m².</p>
-
-            <h3>↩️ Retours</h3>
-            <p><strong>Q: Puis-je retourner ?</strong><br>R: Oui, 14 jours pour changer d'avis.</p>
-
-            <h3>🎁 Promotions</h3>
-            <p><strong>Q: Code promo ?</strong><br>R: AWAKENING15 pour -15% sur 2 t-shirts.</p>
-        </section>
-
-        <section>
-            <h2>CONTACT</h2>
-            <div class="legal-box">
-                <p><strong>Email :</strong> contact@binael.fr</p>
-                <p><strong>Commandes :</strong> commandes@binael.fr</p>
-                <p><strong>Retours :</strong> retours@binael.fr</p>
-                <p><strong>Horaires :</strong> Lundi-Vendredi 9h-18h</p>
-            </div>
-        </section>
+            <button class="lang-btn" id="lang-toggle" onclick="toggleLang()">🇬🇧 EN</button>
+            <button class="burger" id="burger"><span></span><span></span><span></span></button>
+        </div>
     </div>
+</nav>
 
-    <footer style="background: #F8FBFF; border-top: 1px solid #E3F2FD; padding: 3rem 0; text-align: center; margin-top: 4rem;">
-        <p style="color: #5B8DB8; font-size: 0.875rem;">BINAEL © 2026 • Porter • Partager • Profiter</p>
-    </footer>
-</body>
-</html>
+<div class="legal-nav">
+    <a href="#mentions" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
+    <a href="#cgv" data-fr="CGV" data-en="T&Cs">CGV</a>
+    <a href="#livraison" data-fr="Livraison & Retours" data-en="Shipping & Returns">Livraison & Retours</a>
+    <a href="#rgpd" data-fr="Données Personnelles" data-en="Personal Data">Données Personnelles</a>
+    <a href="#cookies" data-fr="Cookies" data-en="Cookies">Cookies</a>
+    <a href="#fiction" data-fr="Avertissement" data-en="Disclaimer">Avertissement</a>
+</div>
+
+<header class="page-header">
+    <h1 data-fr="MENTIONS LÉGALES & CONDITIONS GÉNÉRALES" data-en="LEGAL NOTICE & GENERAL CONDITIONS">MENTIONS LÉGALES & CONDITIONS GÉNÉRALES</h1>
+    <p data-fr="Dernière mise à jour : Mars 2026" data-en="Last updated: March 2026">Dernière mise à jour : Mars 2026</p>
+</header>
+
+<div class="legal-body">
+
+    <!-- ===================== MENTIONS LÉGALES ===================== -->
+    <section class="legal-section" id="mentions">
+        <h2 data-fr="1. MENTIONS LÉGALES" data-en="1. LEGAL NOTICE">1. MENTIONS LÉGALES</h2>
+
+        <h3 data-fr="Éditeur du site" data-en="Website Publisher">Éditeur du site</h3>
+        <p>
+            <strong data-fr="Raison sociale :" data-en="Company name:">Raison sociale :</strong> <span data-fr="D.M. Willame" data-en="D.M. Willame">D.M. Willame</span><br>
+            <strong data-fr="Statut juridique :" data-en="Legal status:">Statut juridique :</strong> <span data-fr="Auto-entrepreneur / Micro-entreprise" data-en="Sole trader / Micro-business">Auto-entrepreneur / Micro-entreprise</span><br>
+            <strong>SIRET :</strong> <span class="placeholder">[SIRET — à compléter]</span><br>
+            <strong data-fr="Adresse professionnelle :" data-en="Business address:">Adresse professionnelle :</strong> Rue du Marin, 80200 Péronne, France<br>
+            <strong data-fr="Email :" data-en="Email:">Email :</strong> contact@binael.fr<br>
+        </p>
+
+        <h3 data-fr="Directeur de la publication" data-en="Publication Director">Directeur de la publication</h3>
+        <p data-fr="Le directeur de la publication est le responsable légal de l'auto-entreprise mentionné ci-dessus." data-en="The publication director is the legal representative of the sole trader mentioned above.">Le directeur de la publication est le responsable légal de l'auto-entreprise mentionné ci-dessus.</p>
+        <p>D.M. Willame</p>
+
+        <h3 data-fr="Hébergement" data-en="Hosting">Hébergement</h3>
+        <p>
+            <strong data-fr="Hébergeur :" data-en="Host:">Hébergeur :</strong> GitHub, Inc.<br>
+            <strong data-fr="Adresse :" data-en="Address:">Adresse :</strong> 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br>
+            <strong data-fr="Site :" data-en="Website:">Site :</strong> <a href="https://github.com" target="_blank">github.com</a>
+        </p>
+
+        <h3 data-fr="Propriété intellectuelle" data-en="Intellectual Property">Propriété intellectuelle</h3>
+        <p data-fr="L'ensemble du contenu du site BINAEL (textes, images, designs, logos, illustrations) est la propriété exclusive de l'éditeur, sauf mention contraire. Toute reproduction, représentation, modification ou exploitation non autorisée de ces contenus est strictement interdite." data-en="All content on the BINAEL website (text, images, designs, logos, illustrations) is the exclusive property of the publisher, unless otherwise stated. Any unauthorised reproduction, representation, modification or use of this content is strictly prohibited.">L'ensemble du contenu du site BINAEL (textes, images, designs, logos, illustrations) est la propriété exclusive de l'éditeur, sauf mention contraire. Toute reproduction, représentation, modification ou exploitation non autorisée de ces contenus est strictement interdite.</p>
+    </section>
+
+    <!-- ===================== CGV ===================== -->
+    <section class="legal-section" id="cgv">
+        <h2 data-fr="2. CONDITIONS GÉNÉRALES DE VENTE" data-en="2. GENERAL TERMS AND CONDITIONS OF SALE">2. CONDITIONS GÉNÉRALES DE VENTE</h2>
+
+        <div class="important-box">
+            <p data-fr="⚠️ Les présentes CGV s'appliquent à toute commande passée sur le site binael.fr. En passant commande, vous acceptez sans réserve les présentes conditions." data-en="⚠️ These T&Cs apply to any order placed on binael.fr. By placing an order, you unconditionally accept these terms.">⚠️ Les présentes CGV s'appliquent à toute commande passée sur le site binael.fr. En passant commande, vous acceptez sans réserve les présentes conditions.</p>
+        </div>
+
+        <h3 data-fr="Produits" data-en="Products">Produits</h3>
+        <p data-fr="BINAEL propose des t-shirts à designs ésotériques de fiction. Les produits sont disponibles dans les tailles et coloris indiqués sur le site, dans la limite des stocks disponibles. Les photographies des produits sont aussi fidèles que possible mais ne sont pas contractuelles." data-en="BINAEL offers t-shirts with fictional esoteric designs. Products are available in the sizes and colours indicated on the website, subject to available stock. Product photographs are as accurate as possible but are not contractually binding.">BINAEL propose des t-shirts à designs ésotériques de fiction. Les produits sont disponibles dans les tailles et coloris indiqués sur le site, dans la limite des stocks disponibles. Les photographies des produits sont aussi fidèles que possible mais ne sont pas contractuelles.</p>
+
+        <h3 data-fr="Prix" data-en="Prices">Prix</h3>
+        <p data-fr="Les prix sont indiqués en euros (€), toutes taxes comprises (TTC). BINAEL se réserve le droit de modifier ses prix à tout moment, mais les produits seront facturés sur la base des tarifs en vigueur au moment de la validation de la commande." data-en="Prices are shown in euros (€), inclusive of all taxes. BINAEL reserves the right to change prices at any time, but products will be invoiced at the prices in effect at the time the order is confirmed.">Les prix sont indiqués en euros (€), toutes taxes comprises (TTC). BINAEL se réserve le droit de modifier ses prix à tout moment, mais les produits seront facturés sur la base des tarifs en vigueur au moment de la validation de la commande.</p>
+        <ul>
+            <li data-fr="T-shirt adulte : 29 €" data-en="Adult t-shirt: €29">T-shirt adulte : 29 €</li>
+            <li data-fr="T-shirt enfant : 24 €" data-en="Child t-shirt: €24">T-shirt enfant : 24 €</li>
+            <li data-fr="Pack Duo (1 adulte + 1 enfant) : 49 € (au lieu de 53 €)" data-en="Duo Pack (1 adult + 1 child): €49 (instead of €53)">Pack Duo (1 adulte + 1 enfant) : 49 € (au lieu de 53 €)</li>
+        </ul>
+
+        <h3 data-fr="Commande" data-en="Order">Commande</h3>
+        <p data-fr="Toute commande passée sur le site vaut acceptation des présentes CGV. La vente ne sera considérée comme définitive qu'après envoi de la confirmation de commande par email et encaissement du paiement complet." data-en="Any order placed on the website constitutes acceptance of these T&Cs. The sale will only be considered final after the order confirmation email has been sent and full payment has been received.">Toute commande passée sur le site vaut acceptation des présentes CGV. La vente ne sera considérée comme définitive qu'après envoi de la confirmation de commande par email et encaissement du paiement complet.</p>
+
+        <h3 data-fr="Paiement" data-en="Payment">Paiement</h3>
+        <p data-fr="Le paiement s'effectue en ligne par carte bancaire via notre prestataire sécurisé. Les données de paiement sont chiffrées et ne sont jamais stockées sur nos serveurs." data-en="Payment is made online by credit card via our secure payment provider. Payment data is encrypted and never stored on our servers.">Le paiement s'effectue en ligne par carte bancaire via notre prestataire sécurisé. Les données de paiement sont chiffrées et ne sont jamais stockées sur nos serveurs.</p>
+
+        <h3 data-fr="Droit de rétractation" data-en="Right of Withdrawal">Droit de rétractation</h3>
+        <p data-fr="Conformément à la législation européenne (directive 2011/83/UE) et au Code de la consommation français, vous disposez d'un délai de 14 jours à compter de la réception de votre commande pour exercer votre droit de rétractation, sans avoir à justifier de motifs ni à payer de pénalités." data-en="In accordance with European legislation (Directive 2011/83/EU) and the French Consumer Code, you have 14 days from receipt of your order to exercise your right of withdrawal, without having to provide any reason or pay any penalties.">Conformément à la législation européenne (directive 2011/83/UE) et au Code de la consommation français, vous disposez d'un délai de 14 jours à compter de la réception de votre commande pour exercer votre droit de rétractation, sans avoir à justifier de motifs ni à payer de pénalités.</p>
+        <p data-fr="Pour exercer ce droit, contactez-nous à : " data-en="To exercise this right, contact us at: ">Pour exercer ce droit, contactez-nous à : contact@binael.fr</p>
+
+        <h3 data-fr="Produits personnalisés" data-en="Personalised Products">Produits personnalisés</h3>
+        <p data-fr="Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation ne peut être exercé pour des produits confectionnés selon les spécifications du consommateur ou nettement personnalisés." data-en="In accordance with Article L221-28 of the French Consumer Code, the right of withdrawal cannot be exercised for products made to the consumer's specifications or clearly personalised.">Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation ne peut être exercé pour des produits confectionnés selon les spécifications du consommateur ou nettement personnalisés.</p>
+
+        <h3 data-fr="Garanties légales" data-en="Legal Guarantees">Garanties légales</h3>
+        <p data-fr="Tous nos produits bénéficient de la garantie légale de conformité (articles L217-4 à L217-14 du Code de la consommation) et de la garantie légale contre les vices cachés (articles 1641 à 1648 du Code civil)." data-en="All our products benefit from the legal guarantee of conformity (Articles L217-4 to L217-14 of the French Consumer Code) and the legal guarantee against hidden defects (Articles 1641 to 1648 of the French Civil Code).">Tous nos produits bénéficient de la garantie légale de conformité (articles L217-4 à L217-14 du Code de la consommation) et de la garantie légale contre les vices cachés (articles 1641 à 1648 du Code civil).</p>
+
+        <h3 data-fr="Médiation" data-en="Mediation">Médiation</h3>
+        <p data-fr="En cas de litige non résolu à l'amiable, vous pouvez recourir gratuitement à un médiateur de la consommation. Plateforme européenne de règlement en ligne des litiges : " data-en="In the event of a dispute that cannot be resolved amicably, you may use a consumer mediator free of charge. European online dispute resolution platform: ">En cas de litige non résolu à l'amiable, vous pouvez recourir gratuitement à un médiateur de la consommation. Plateforme européenne de règlement en ligne des litiges : <a href="https://ec.europa.eu/consumers/odr" target="_blank">ec.europa.eu/consumers/odr</a></p>
+    </section>
+
+    <!-- ===================== LIVRAISON ===================== -->
+    <section class="legal-section" id="livraison">
+        <h2 data-fr="3. LIVRAISON & RETOURS" data-en="3. SHIPPING & RETURNS">3. LIVRAISON & RETOURS</h2>
+
+        <h3 data-fr="Délais de livraison" data-en="Delivery Times">Délais de livraison</h3>
+        <ul>
+            <li data-fr="France métropolitaine : 3–5 jours ouvrés" data-en="Metropolitan France: 3–5 working days">France métropolitaine : 3–5 jours ouvrés</li>
+            <li data-fr="Europe : 5–10 jours ouvrés" data-en="Europe: 5–10 working days">Europe : 5–10 jours ouvrés</li>
+            <li data-fr="International : 7–21 jours ouvrés" data-en="International: 7–21 working days">International : 7–21 jours ouvrés</li>
+        </ul>
+        <p data-fr="Ces délais sont indicatifs et courent à compter de la confirmation d'expédition. BINAEL ne peut être tenu responsable des retards dus aux transporteurs ou aux douanes." data-en="These timescales are indicative and run from the shipping confirmation. BINAEL cannot be held responsible for delays caused by carriers or customs.">Ces délais sont indicatifs et courent à compter de la confirmation d'expédition. BINAEL ne peut être tenu responsable des retards dus aux transporteurs ou aux douanes.</p>
+
+        <h3 data-fr="Frais de livraison" data-en="Shipping Costs">Frais de livraison</h3>
+        <ul>
+            <li data-fr="Livraison offerte en France à partir de 50 € d'achat" data-en="Free delivery in France for orders over €50">Livraison offerte en France à partir de 50 € d'achat</li>
+            <li data-fr="Frais de port : calculés au moment de la commande selon destination et poids" data-en="Shipping costs: calculated at checkout based on destination and weight">Frais de port : calculés au moment de la commande selon destination et poids</li>
+        </ul>
+
+        <h3 data-fr="Politique de retours" data-en="Returns Policy">Politique de retours</h3>
+        <p data-fr="Les retours sont acceptés dans un délai de 30 jours suivant la réception, pour les articles non portés, non lavés et dans leur emballage d'origine. Pour initier un retour, contactez-nous à " data-en="Returns are accepted within 30 days of receipt, for unworn, unwashed items in their original packaging. To initiate a return, contact us at ">Les retours sont acceptés dans un délai de 30 jours suivant la réception, pour les articles non portés, non lavés et dans leur emballage d'origine. Pour initier un retour, contactez-nous à contact@binael.fr</p>
+        <p data-fr="Les frais de retour sont à la charge du client sauf en cas de défaut ou d'erreur de notre part." data-en="Return shipping costs are the customer's responsibility, except in the case of a defect or error on our part.">Les frais de retour sont à la charge du client sauf en cas de défaut ou d'erreur de notre part.</p>
+
+        <h3 data-fr="Remboursements" data-en="Refunds">Remboursements</h3>
+        <p data-fr="Après réception et vérification du retour, le remboursement sera effectué dans un délai de 14 jours sur le moyen de paiement initial." data-en="After receipt and inspection of the return, the refund will be processed within 14 days to the original payment method.">Après réception et vérification du retour, le remboursement sera effectué dans un délai de 14 jours sur le moyen de paiement initial.</p>
+    </section>
+
+    <!-- ===================== RGPD ===================== -->
+    <section class="legal-section" id="rgpd">
+        <h2 data-fr="4. DONNÉES PERSONNELLES (RGPD)" data-en="4. PERSONAL DATA (GDPR)">4. DONNÉES PERSONNELLES (RGPD)</h2>
+
+        <h3 data-fr="Responsable du traitement" data-en="Data Controller">Responsable du traitement</h3>
+        <p>
+            D.M. Willame<br>
+            Rue du Marin, 80200 Péronne, France<br>
+            contact@binael.fr
+        </p>
+
+        <h3 data-fr="Données collectées" data-en="Data Collected">Données collectées</h3>
+        <p data-fr="Dans le cadre de votre commande et de notre relation commerciale, nous collectons les données suivantes :" data-en="In connection with your order and our commercial relationship, we collect the following data:">Dans le cadre de votre commande et de notre relation commerciale, nous collectons les données suivantes :</p>
+        <ul>
+            <li data-fr="Nom, prénom, adresse email" data-en="First name, surname, email address">Nom, prénom, adresse email</li>
+            <li data-fr="Adresse de livraison et de facturation" data-en="Delivery and billing address">Adresse de livraison et de facturation</li>
+            <li data-fr="Données de commande et d'achat" data-en="Order and purchase data">Données de commande et d'achat</li>
+            <li data-fr="Adresse IP et données de navigation (via cookies)" data-en="IP address and browsing data (via cookies)">Adresse IP et données de navigation (via cookies)</li>
+        </ul>
+
+        <h3 data-fr="Finalités et base légale" data-en="Purposes and Legal Basis">Finalités et base légale</h3>
+        <ul>
+            <li data-fr="Traitement des commandes — base légale : exécution du contrat" data-en="Order processing — legal basis: contract performance">Traitement des commandes — base légale : exécution du contrat</li>
+            <li data-fr="Envoi de newsletters (si inscription) — base légale : consentement" data-en="Newsletter sending (if subscribed) — legal basis: consent">Envoi de newsletters (si inscription) — base légale : consentement</li>
+            <li data-fr="Amélioration du site — base légale : intérêt légitime" data-en="Site improvement — legal basis: legitimate interest">Amélioration du site — base légale : intérêt légitime</li>
+            <li data-fr="Obligations légales et comptables — base légale : obligation légale" data-en="Legal and accounting obligations — legal basis: legal obligation">Obligations légales et comptables — base légale : obligation légale</li>
+        </ul>
+
+        <h3 data-fr="Durée de conservation" data-en="Retention Period">Durée de conservation</h3>
+        <ul>
+            <li data-fr="Données de commande : 10 ans (obligations comptables)" data-en="Order data: 10 years (accounting obligations)">Données de commande : 10 ans (obligations comptables)</li>
+            <li data-fr="Données de newsletter : jusqu'à désinscription" data-en="Newsletter data: until unsubscription">Données de newsletter : jusqu'à désinscription</li>
+            <li data-fr="Données de navigation : 13 mois maximum" data-en="Browsing data: 13 months maximum">Données de navigation : 13 mois maximum</li>
+        </ul>
+
+        <h3 data-fr="Vos droits" data-en="Your Rights">Vos droits</h3>
+        <p data-fr="Conformément au RGPD, vous disposez des droits suivants :" data-en="In accordance with the GDPR, you have the following rights:">Conformément au RGPD, vous disposez des droits suivants :</p>
+        <ul>
+            <li data-fr="Droit d'accès à vos données" data-en="Right of access to your data">Droit d'accès à vos données</li>
+            <li data-fr="Droit de rectification" data-en="Right of rectification">Droit de rectification</li>
+            <li data-fr="Droit à l'effacement (droit à l'oubli)" data-en="Right to erasure (right to be forgotten)">Droit à l'effacement (droit à l'oubli)</li>
+            <li data-fr="Droit à la portabilité de vos données" data-en="Right to data portability">Droit à la portabilité de vos données</li>
+            <li data-fr="Droit d'opposition et de limitation du traitement" data-en="Right to object to and restrict processing">Droit d'opposition et de limitation du traitement</li>
+            <li data-fr="Droit de retirer votre consentement à tout moment" data-en="Right to withdraw consent at any time">Droit de retirer votre consentement à tout moment</li>
+        </ul>
+        <p data-fr="Pour exercer vos droits, contactez-nous à : " data-en="To exercise your rights, contact us at: ">Pour exercer vos droits, contactez-nous à : contact@binael.fr</p>
+        <p data-fr="Vous pouvez également introduire une réclamation auprès de la CNIL : " data-en="You may also lodge a complaint with the CNIL: ">Vous pouvez également introduire une réclamation auprès de la CNIL : <a href="https://www.cnil.fr" target="_blank">cnil.fr</a></p>
+
+        <h3 data-fr="Partage de données" data-en="Data Sharing">Partage de données</h3>
+        <p data-fr="Vos données peuvent être transmises à nos prestataires techniques (hébergement, paiement, logistique) dans le strict cadre de l'exécution de votre commande. Elles ne sont jamais vendues à des tiers." data-en="Your data may be shared with our technical service providers (hosting, payment, logistics) strictly within the scope of processing your order. It is never sold to third parties.">Vos données peuvent être transmises à nos prestataires techniques (hébergement, paiement, logistique) dans le strict cadre de l'exécution de votre commande. Elles ne sont jamais vendues à des tiers.</p>
+    </section>
+
+    <!-- ===================== COOKIES ===================== -->
+    <section class="legal-section" id="cookies">
+        <h2 data-fr="5. POLITIQUE DE COOKIES" data-en="5. COOKIE POLICY">5. POLITIQUE DE COOKIES</h2>
+
+        <h3 data-fr="Cookies utilisés" data-en="Cookies Used">Cookies utilisés</h3>
+        <ul>
+            <li data-fr="<strong>binael_lang</strong> — Stocke votre préférence de langue (FR/EN). Durée : session. Aucune donnée personnelle." data-en="<strong>binael_lang</strong> — Stores your language preference (FR/EN). Duration: session. No personal data."><strong>binael_lang</strong> — Stocke votre préférence de langue (FR/EN). Durée : session. Aucune donnée personnelle.</li>
+            <li data-fr="<strong>Cookies de paiement</strong> — Nécessaires à la sécurisation des transactions. Gérés par notre prestataire de paiement." data-en="<strong>Payment cookies</strong> — Necessary for securing transactions. Managed by our payment provider."><strong>Cookies de paiement</strong> — Nécessaires à la sécurisation des transactions. Gérés par notre prestataire de paiement.</li>
+            <li data-fr="<strong>Cookies analytiques</strong> (si activés) — Pour mesurer l'audience du site. Vous pouvez les refuser." data-en="<strong>Analytics cookies</strong> (if enabled) — To measure site traffic. You can decline them."><strong>Cookies analytiques</strong> (si activés) — Pour mesurer l'audience du site. Vous pouvez les refuser.</li>
+        </ul>
+
+        <h3 data-fr="Gestion des cookies" data-en="Cookie Management">Gestion des cookies</h3>
+        <p data-fr="Vous pouvez à tout moment modifier vos préférences de cookies via les paramètres de votre navigateur. La suppression des cookies peut affecter certaines fonctionnalités du site." data-en="You can change your cookie preferences at any time via your browser settings. Deleting cookies may affect certain site features.">Vous pouvez à tout moment modifier vos préférences de cookies via les paramètres de votre navigateur. La suppression des cookies peut affecter certaines fonctionnalités du site.</p>
+
+        <div class="important-box">
+            <p data-fr="ℹ️ Le site BINAEL utilise le stockage local (localStorage) uniquement pour mémoriser votre préférence de langue. Aucun cookie de tracking publicitaire n'est utilisé." data-en="ℹ️ The BINAEL site uses local storage (localStorage) solely to remember your language preference. No advertising tracking cookies are used.">ℹ️ Le site BINAEL utilise le stockage local (localStorage) uniquement pour mémoriser votre préférence de langue. Aucun cookie de tracking publicitaire n'est utilisé.</p>
+        </div>
+    </section>
+
+    <!-- ===================== AVERTISSEMENT FICTION ===================== -->
+    <section class="legal-section" id="fiction">
+        <h2 data-fr="6. AVERTISSEMENT — FICTION ÉSOTÉRIQUE" data-en="6. DISCLAIMER — ESOTERIC FICTION">6. AVERTISSEMENT — FICTION ÉSOTÉRIQUE</h2>
+
+        <div class="fiction-box">
+            <p><strong data-fr="⚠️ IMPORTANT — À LIRE ATTENTIVEMENT" data-en="⚠️ IMPORTANT — PLEASE READ CAREFULLY">⚠️ IMPORTANT — À LIRE ATTENTIVEMENT</strong></p>
+            <p data-fr="L'univers BINAEL est une œuvre de <strong>FICTION ÉSOTÉRIQUE</strong> inspirée de traditions mystiques, mythologiques et philosophiques. Les anges, hiérarchies, maisons et archétypes présentés sur ce site sont des constructions narratives à vocation artistique et spirituelle." data-en="The BINAEL universe is a work of <strong>ESOTERIC FICTION</strong> inspired by mystical, mythological and philosophical traditions. The angels, hierarchies, houses and archetypes presented on this site are narrative constructs with an artistic and spiritual purpose.">L'univers BINAEL est une œuvre de <strong>FICTION ÉSOTÉRIQUE</strong> inspirée de traditions mystiques, mythologiques et philosophiques. Les anges, hiérarchies, maisons et archétypes présentés sur ce site sont des constructions narratives à vocation artistique et spirituelle.</p>
+        </div>
+
+        <h3 data-fr="Ce que BINAEL N'EST PAS" data-en="What BINAEL IS NOT">Ce que BINAEL N'EST PAS</h3>
+        <ul>
+            <li data-fr="BINAEL n'est PAS une organisation religieuse, une secte, ni un mouvement spirituel organisé" data-en="BINAEL is NOT a religious organisation, cult, or organised spiritual movement">BINAEL n'est PAS une organisation religieuse, une secte, ni un mouvement spirituel organisé</li>
+            <li data-fr="BINAEL ne prétend PAS à une vérité théologique ou spirituelle absolue" data-en="BINAEL does NOT claim any absolute theological or spiritual truth">BINAEL ne prétend PAS à une vérité théologique ou spirituelle absolue</li>
+            <li data-fr="Les descriptions d'anges ou de hiérarchies ne sont PAS des affirmations de faits réels" data-en="Descriptions of angels or hierarchies are NOT statements of real facts">Les descriptions d'anges ou de hiérarchies ne sont PAS des affirmations de faits réels</li>
+            <li data-fr="Le quiz de personnalité est un outil ludique et non un outil de diagnostic psychologique" data-en="The personality quiz is a fun tool and not a psychological diagnostic instrument">Le quiz de personnalité est un outil ludique et non un outil de diagnostic psychologique</li>
+        </ul>
+
+        <h3 data-fr="Sources d'inspiration" data-en="Sources of Inspiration">Sources d'inspiration</h3>
+        <p data-fr="Le contenu de BINAEL s'inspire librement des traditions suivantes, sans prétendre les représenter fidèlement ni en être un porte-parole officiel : angéologie chrétienne médiévale, Kabbale juive, mythologie sumérienne, hermétisme, néoplatonisme, symbolisme universel." data-en="BINAEL's content is freely inspired by the following traditions, without claiming to represent them accurately or to be an official spokesperson: medieval Christian angelology, Jewish Kabbalah, Sumerian mythology, Hermeticism, Neoplatonism, universal symbolism.">Le contenu de BINAEL s'inspire librement des traditions suivantes, sans prétendre les représenter fidèlement ni en être un porte-parole officiel : angéologie chrétienne médiévale, Kabbale juive, mythologie sumérienne, hermétisme, néoplatonisme, symbolisme universel.</p>
+
+        <h3 data-fr="Liberté de conscience" data-en="Freedom of Conscience">Liberté de conscience</h3>
+        <p data-fr="BINAEL respecte toutes les croyances et traditions religieuses ou spirituelles. Nos produits s'adressent à toute personne sensible à l'esthétique ésotérique, quelle que soit sa croyance ou son absence de croyance." data-en="BINAEL respects all religious or spiritual beliefs and traditions. Our products are aimed at anyone drawn to esoteric aesthetics, regardless of their beliefs or lack thereof.">BINAEL respecte toutes les croyances et traditions religieuses ou spirituelles. Nos produits s'adressent à toute personne sensible à l'esthétique ésotérique, quelle que soit sa croyance ou son absence de croyance.</p>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="legal-section" id="contact" style="border-bottom:none;">
+        <h2 data-fr="7. CONTACT" data-en="7. CONTACT">7. CONTACT</h2>
+        <p data-fr="Pour toute question relative aux présentes mentions légales, à vos données personnelles ou à une commande :" data-en="For any questions regarding these legal notices, your personal data or an order:">Pour toute question relative aux présentes mentions légales, à vos données personnelles ou à une commande :</p>
+        <p>
+            📧 contact@binael.fr<br>
+            🌐 <a href="https://binael.fr">binael.fr</a>
+        </p>
+        <div class="important-box" style="margin-top:2rem;">
+            <p data-fr="📋 <strong>Checklist avant mise en ligne</strong> — Remplacez tous les <code>[PLACEHOLDER]</code> par vos vraies informations : nom, SIRET, adresse, email de contact." data-en="📋 <strong>Pre-launch checklist</strong> — Replace all <code>[PLACEHOLDER]</code> with your real information: name, SIRET, address, contact email.">📋 <strong data-fr="Checklist avant mise en ligne" data-en="Pre-launch checklist">Checklist avant mise en ligne</strong> — <span data-fr="Remplacez tous les" data-en="Replace all">Remplacez tous les</span> <code>[PLACEHOLDER]</code> <span data-fr="par vos vraies informations : nom, SIRET, adresse, email de contact." data-en="with your real information: name, SIRET, address, contact email.">par vos vraies informations : nom, SIRET, adresse, email de contact.</span></p>
+        </div>
+    </section>
+
+</div>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-col"><h4>Shop</h4><ul><li><a href="shop.html" data-fr="Collection" data-en="Collection">Collection</a></li></ul></div>
+            <div class="footer-col"><h4 data-fr="Univers" data-en="Universe">Univers</h4><ul>
+                <li><a href="hierarchies.html" data-fr="Hiérarchies" data-en="Hierarchies">Hiérarchies</a></li>
+                <li><a href="ange-gardien.html" data-fr="Ange Gardien" data-en="Guardian Angel">Ange Gardien</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+            </ul></div>
+            <div class="footer-col"><h4 data-fr="Légal" data-en="Legal">Légal</h4><ul>
+                <li><a href="legal.html" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a></li>
+                <li><a href="qualite.html" data-fr="Qualité" data-en="Quality">Qualité</a></li>
+            </ul></div>
+        </div>
+        <div class="disclaimer">⚠️ <strong data-fr="FICTION ÉSOTÉRIQUE" data-en="ESOTERIC FICTION">FICTION ÉSOTÉRIQUE</strong> — <span data-fr="BINAEL est un univers de FICTION basé sur des traditions mystiques." data-en="BINAEL is a FICTION universe based on mystical traditions.">BINAEL est un univers de FICTION basé sur des traditions mystiques.</span></div>
+        <p style="text-align:center;font-size:0.875rem;color:#5B8DB8;">BINAEL © 2026 • <span data-fr="Porter • Partager • Profiter" data-en="Wear • Share • Thrive">Porter • Partager • Profiter</span></p>
+    </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('nav-menu');
+    burger.addEventListener('click', () => { burger.classList.toggle('open'); navMenu.classList.toggle('open'); });
+    navMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { burger.c
