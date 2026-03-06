@@ -63,6 +63,10 @@
         .disclaimer { background: #E3F2FD; border: 1px solid #B8D8F0; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; font-size: 0.95rem; text-align: center; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 2rem; padding-right: 2rem; }
         .disclaimer strong { color: #4A90E2; }
 
+
+        .lang-btn { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.1em; background: #E3F2FD; border: 1px solid #B8D8F0; color: #4A90E2; padding: 0.4rem 0.9rem; border-radius: 20px; cursor: pointer; transition: 0.2s; white-space: nowrap; }
+        .lang-btn:hover { background: #4A90E2; color: white; }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
         @media (max-width: 768px) {
             .burger { display: flex; }
             .nav-menu { display: none; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); justify-content: center; align-items: center; gap: 2.5rem; z-index: 1050; }
@@ -82,8 +86,9 @@
                 <img src="logo.svg" alt="BINAEL" class="logo-svg">
                 <a href="index.html" class="logo-text">BINAEL</a>
             </div>
+            <div class="nav-right">
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="quiz.html" class="active">Quiz</a></li>
                 <li><a href="ange-gardien.html">Ange Gardien</a></li>
@@ -93,6 +98,8 @@
             <button class="burger" id="burger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
+            <button class="lang-btn" id="lang-toggle" onclick="toggleLang()">🇬🇧 EN</button>
+        </div>
         </div>
     </nav>
 
@@ -100,7 +107,7 @@
         <div class="container">
             <div class="intro-box">
                 <div class="intro-icon">🪽</div>
-                <h1 style="margin-bottom: 1rem;">QUEL ANGE ÊTES-VOUS ?</h1>
+                <h1 style="margin-bottom: 1rem;" data-fr="QUEL ANGE ÊTES-VOUS ?" data-en="WHICH ANGEL ARE YOU?">QUEL ANGE ÊTES-VOUS ?</h1>
                 <p style="font-size: 1.125rem; color: #5B8DB8; margin-bottom: 2rem;">
                     Dans un monde qui va vite, complexe, parfois violent et incertain...<br>
                     Prenez 3 minutes pour vous reconnecter à votre être profond.
@@ -108,7 +115,7 @@
                 <p style="font-size: 1.25rem; color: #4A90E2; font-weight: 600; margin-bottom: 3rem;">
                     Découvrez votre hiérarchie angélique et le t-shirt qui vous correspond.
                 </p>
-                <button class="btn" onclick="startQuiz()">✨ COMMENCER LE QUIZ</button>
+                <button class="btn" onclick="startQuiz()" data-fr="✨ COMMENCER LE QUIZ" data-en="✨ START THE QUIZ">✨ COMMENCER LE QUIZ</button>
             </div>
         </div>
     </div>
@@ -134,11 +141,11 @@
                 <h2 id="product-name" style="margin-bottom: 0.5rem;"></h2>
                 <p id="product-desc" style="color: #5B8DB8; margin-bottom: 1rem;"></p>
                 <p style="font-size: 1.5rem; font-family: 'Cinzel', serif; font-weight: 700; color: #4A90E2; margin-bottom: 2rem;">29€</p>
-                <a href="shop.html" class="btn">VOIR CE T-SHIRT →</a>
+                <a href="shop.html" class="btn" data-fr="VOIR CE T-SHIRT →" data-en="SEE THIS T-SHIRT →">VOIR CE T-SHIRT →</a>
             </div>
             <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <button class="btn btn-secondary" onclick="location.reload()">REFAIRE LE QUIZ</button>
-                <a href="shop.html" class="btn">VOIR TOUTE LA COLLECTION</a>
+                <button class="btn btn-secondary" onclick="location.reload()" data-fr="REFAIRE LE QUIZ" data-en="RETAKE THE QUIZ">REFAIRE LE QUIZ</button>
+                <a href="shop.html" class="btn" data-fr="VOIR TOUTE LA COLLECTION" data-en="SEE FULL COLLECTION">VOIR TOUTE LA COLLECTION</a>
             </div>
         </div>
     </div>
@@ -149,7 +156,7 @@
             <div class="footer-col"><h4>UNIVERS</h4><ul><li><a href="hierarchies.html">Hiérarchies</a></li><li><a href="ange-gardien.html">Ange Gardien</a></li></ul></div>
             <div class="footer-col"><h4>INFORMATIONS</h4><ul><li><a href="qualite.html">Qualité</a></li><li><a href="legal.html">Legal</a></li></ul></div>
         </div>
-        <div class="disclaimer">⚠️ <strong>FICTION ÉSOTÉRIQUE</strong><br>BINAEL est un univers de FICTION basé sur des traditions mystiques.</div>
+        <div class="disclaimer">⚠️ <strong data-fr="FICTION ÉSOTÉRIQUE" data-en="ESOTERIC FICTION">FICTION ÉSOTÉRIQUE</strong><br>BINAEL est un univers de FICTION basé sur des traditions mystiques.</div>
         <div style="text-align:center;font-size:0.875rem;color:#5B8DB8;padding:0 2rem;"><p>BINAEL © 2026 • Porter • Partager • Profiter</p></div>
     </footer>
 
@@ -161,6 +168,9 @@
             burger.classList.toggle('open');
             navMenu.classList.toggle('open');
         });
+        navMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+            burger.classList.remove('open'); navMenu.classList.remove('open');
+        }));
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 burger.classList.remove('open');
@@ -169,153 +179,147 @@
         });
 
         // Quiz data
+        // 6 designs: ange | seraphim | cherubim | fallen | watcher | feminine
+        const lang = () => localStorage.getItem('binael_lang') || 'fr';
+
+        // 6 designs réels: ange | seraphim | cherubim | fallen | watcher | feminine
+        const _lang = () => localStorage.getItem('binael_lang') || 'fr';
+
         const quizData = {
             questions: [
-                { question: "Dans le monde actuel rapide et stressant, vous cherchez avant tout...", answers: [
-                    { text: "La paix intérieure et le calme", scores: { gardien: 3, throne: 1 } },
-                    { text: "La compréhension profonde du sens de la vie", scores: { cherubim: 3, philosopher: 2 } },
-                    { text: "La transformation et l'évolution personnelle", scores: { seraphim: 3, fallen: 2 } },
-                    { text: "L'équilibre entre lumière et ombre", scores: { fallen: 3, watcher: 2 } }
+                { fr: "Quel mot vous définit le mieux ?", en: "Which word best defines you?", answers: [
+                    { fr: "Protecteur·rice", en: "Protective",                       scores: { ange: 3, feminine: 2 } },
+                    { fr: "Sage et observateur·rice", en: "Wise and observant",       scores: { cherubim: 3, watcher: 2 } },
+                    { fr: "Passionné·e et ardent·e", en: "Passionate and fiery",      scores: { seraphim: 3 } },
+                    { fr: "Libre et authentique", en: "Free and authentic",            scores: { fallen: 3, watcher: 1 } }
                 ]},
-                { question: "Quand vous faites face à l'incertitude, vous...", answers: [
-                    { text: "Vous tournez vers votre intuition", scores: { gardien: 2, watcher: 3 } },
-                    { text: "Analysez la situation en profondeur", scores: { cherubim: 3, philosopher: 2 } },
-                    { text: "Voyez cela comme une opportunité de grandir", scores: { seraphim: 3, fallen: 1 } },
-                    { text: "Cherchez l'ordre caché derrière le chaos", scores: { geometry: 3, vesica: 2 } }
+                { fr: "Dans votre cercle, vous êtes...", en: "In your circle, you are...", answers: [
+                    { fr: "Celui·celle qui réconforte", en: "The one who comforts",                          scores: { ange: 3, feminine: 2 } },
+                    { fr: "Celui·celle qui observe et conseille", en: "The one who observes and advises",    scores: { watcher: 3, cherubim: 2 } },
+                    { fr: "Celui·celle qui initie et dynamise", en: "The one who initiates and energises",   scores: { seraphim: 3 } },
+                    { fr: "L\'indépendant·e qui suit sa voie", en: "The independent who follows their path", scores: { fallen: 3 } }
                 ]},
-                { question: "Votre plus grande force est...", answers: [
-                    { text: "Votre compassion et votre empathie", scores: { gardien: 3, throne: 1 } },
-                    { text: "Votre sagesse et votre discernement", scores: { cherubim: 3, philosopher: 2 } },
-                    { text: "Votre courage face au changement", scores: { seraphim: 3, fallen: 2 } },
-                    { text: "Votre capacité à voir les connexions", scores: { geometry: 3, asabove: 2 } }
+                { fr: "Votre rapport à la spiritualité est...", en: "Your relationship with spirituality is...", answers: [
+                    { fr: "Une pratique de bienveillance au quotidien", en: "A daily practice of kindness",         scores: { ange: 3, feminine: 2 } },
+                    { fr: "Une quête intellectuelle et philosophique", en: "An intellectual and philosophical quest", scores: { cherubim: 3, watcher: 1 } },
+                    { fr: "Une transformation intérieure constante", en: "A constant inner transformation",          scores: { seraphim: 3, fallen: 1 } },
+                    { fr: "Une observation silencieuse du mystère", en: "A silent observation of mystery",           scores: { watcher: 3, cherubim: 1 } }
                 ]},
-                { question: "Pour vous reconnecter à votre être profond, vous préférez...", answers: [
-                    { text: "La méditation silencieuse", scores: { watcher: 3, gardien: 2 } },
-                    { text: "L'étude de textes sacrés ou philosophiques", scores: { cherubim: 3, philosopher: 2 } },
-                    { text: "L'action transformatrice", scores: { seraphim: 3, fallen: 1 } },
-                    { text: "L'observation de la nature et ses symboles", scores: { geometry: 3, vesica: 2 } }
+                { fr: "Face à l\'injustice, vous...", en: "Faced with injustice, you...", answers: [
+                    { fr: "Protégez et réconfortez la victime", en: "Protect and comfort the victim",              scores: { ange: 3, feminine: 2 } },
+                    { fr: "Cherchez à comprendre les causes profondes", en: "Seek to understand root causes",       scores: { cherubim: 3, watcher: 1 } },
+                    { fr: "Vous enflammez et passez à l\'action", en: "Ignite and take action",                   scores: { seraphim: 3 } },
+                    { fr: "Acceptez que la dualité soit inévitable", en: "Accept that duality is inevitable",       scores: { fallen: 3, watcher: 1 } }
                 ]},
-                { question: "Votre relation avec votre part d'ombre est...", answers: [
-                    { text: "Je préfère me concentrer sur la lumière", scores: { seraphim: 2, ange: 3 } },
-                    { text: "Je cherche à la comprendre intellectuellement", scores: { cherubim: 3, philosopher: 2 } },
-                    { text: "Je l'accepte comme partie intégrante de moi", scores: { fallen: 3, asabove: 2 } },
-                    { text: "Je l'observe sans jugement", scores: { watcher: 3, gardien: 1 } }
+                { fr: "Votre pratique spirituelle préférée est...", en: "Your favourite spiritual practice is...", answers: [
+                    { fr: "La méditation et le silence intérieur", en: "Meditation and inner silence",             scores: { watcher: 3, ange: 1 } },
+                    { fr: "L\'étude de textes sacrés", en: "Studying sacred texts",                              scores: { cherubim: 3, watcher: 1 } },
+                    { fr: "L\'action et la transformation concrète", en: "Action and concrete transformation",    scores: { seraphim: 3, fallen: 1 } },
+                    { fr: "Le soin de soi et des autres", en: "Self-care and caring for others",                   scores: { feminine: 3, ange: 2 } }
                 ]},
-                { question: "Dans votre quête spirituelle, vous êtes attiré par...", answers: [
-                    { text: "Les anges gardiens et la protection divine", scores: { gardien: 3, ange: 2 } },
-                    { text: "La géométrie sacrée et les symboles", scores: { geometry: 3, vesica: 2, philosopher: 1 } },
-                    { text: "L'alchimie et la transformation", scores: { philosopher: 3, seraphim: 2 } },
-                    { text: "La dualité et les mystères de l'existence", scores: { fallen: 3, asabove: 2 } }
+                { fr: "Votre relation avec votre part d\'ombre est...", en: "Your relationship with your shadow side is...", answers: [
+                    { fr: "Je me concentre sur la lumière", en: "I focus on the light",                            scores: { ange: 3, seraphim: 1 } },
+                    { fr: "Je cherche à la comprendre", en: "I seek to understand it",                             scores: { cherubim: 3, watcher: 1 } },
+                    { fr: "Je l\'intègre comme une partie de moi", en: "I integrate it as part of myself",       scores: { fallen: 3, feminine: 1 } },
+                    { fr: "Je l\'observe sans jugement", en: "I observe it without judgement",                    scores: { watcher: 3, fallen: 1 } }
                 ]},
-                { question: "Votre mission dans la vie est de...", answers: [
-                    { text: "Protéger et aider ceux que vous aimez", scores: { gardien: 3, watcher: 2 } },
-                    { text: "Chercher et partager la connaissance", scores: { cherubim: 3, philosopher: 2 } },
-                    { text: "Vous transformer constamment", scores: { seraphim: 3, fallen: 2 } },
-                    { text: "Maintenir l'équilibre et l'harmonie", scores: { throne: 3, vesica: 2 } }
+                { fr: "Vous êtes attiré·e par...", en: "You are drawn to...", answers: [
+                    { fr: "La protection divine et les anges gardiens", en: "Divine protection and guardian angels",  scores: { ange: 3, feminine: 2 } },
+                    { fr: "La sagesse kabbalistique et les symboles", en: "Kabbalistic wisdom and symbols",           scores: { cherubim: 3, watcher: 2 } },
+                    { fr: "Le feu, l\'alchimie et la transmutation", en: "Fire, alchemy and transmutation",          scores: { seraphim: 3, fallen: 1 } },
+                    { fr: "La dualité et les mystères de l\'existence", en: "Duality and the mysteries of existence", scores: { fallen: 3, watcher: 1 } }
                 ]},
-                { question: "Face à un défi, vous...", answers: [
-                    { text: "Restez calme et rassurant", scores: { gardien: 3, throne: 1 } },
-                    { text: "Cherchez à comprendre la leçon", scores: { cherubim: 3, watcher: 2 } },
-                    { text: "Vous enflammez et passez à l'action", scores: { seraphim: 3 } },
-                    { text: "Acceptez et vous adaptez", scores: { fallen: 3, asabove: 2 } }
+                { fr: "Votre mission dans la vie est de...", en: "Your mission in life is to...", answers: [
+                    { fr: "Protéger et prendre soin de ceux que j\'aime", en: "Protect and care for those I love",     scores: { ange: 3, feminine: 2 } },
+                    { fr: "Chercher et transmettre la connaissance", en: "Seek and share knowledge",                     scores: { cherubim: 3, watcher: 1 } },
+                    { fr: "Me transformer et transformer le monde", en: "Transform myself and transform the world",       scores: { seraphim: 3, fallen: 1 } },
+                    { fr: "Témoigner et révéler la vérité", en: "Bear witness and reveal the truth",                     scores: { watcher: 3, cherubim: 1 } }
                 ]},
-                { question: "Votre élément préféré est...", answers: [
-                    { text: "Le Feu — passion, transformation", scores: { seraphim: 3, philosopher: 1 } },
-                    { text: "L'Eau — émotion, intuition", scores: { gardien: 3, vesica: 2 } },
-                    { text: "L'Air — intellect, communication", scores: { cherubim: 3, geometry: 1 } },
-                    { text: "La Terre — stabilité, ancrage", scores: { throne: 3, watcher: 2 } }
+                { fr: "Face à un défi, vous...", en: "Faced with a challenge, you...", answers: [
+                    { fr: "Restez calme et rassurant·e", en: "Stay calm and reassuring",       scores: { ange: 3, feminine: 2 } },
+                    { fr: "Cherchez à comprendre la leçon", en: "Seek to understand the lesson", scores: { cherubim: 3, watcher: 2 } },
+                    { fr: "Vous enflammez et foncez", en: "Ignite and charge forward",           scores: { seraphim: 3 } },
+                    { fr: "Acceptez et vous adaptez", en: "Accept and adapt",                    scores: { fallen: 3, watcher: 1 } }
                 ]},
-                { question: "Vous vous sentez le plus aligné quand...", answers: [
-                    { text: "Vous êtes au service des autres", scores: { gardien: 3, ange: 2 } },
-                    { text: "Vous apprenez quelque chose de nouveau", scores: { cherubim: 3, philosopher: 2 } },
-                    { text: "Vous sortez de votre zone de confort", scores: { seraphim: 3, fallen: 2 } },
-                    { text: "Vous contemplez les mystères de l'univers", scores: { geometry: 3, asabove: 2 } }
+                { fr: "Votre élément préféré est...", en: "Your favourite element is...", answers: [
+                    { fr: "Le Feu — passion, transformation", en: "Fire — passion, transformation", scores: { seraphim: 3 } },
+                    { fr: "L\'Eau — émotion, intuition", en: "Water — emotion, intuition",        scores: { feminine: 3, ange: 1 } },
+                    { fr: "L\'Air — intellect, communication", en: "Air — intellect, communication", scores: { cherubim: 3, watcher: 1 } },
+                    { fr: "La Terre — stabilité, ancrage", en: "Earth — stability, grounding",     scores: { watcher: 3, ange: 1 } }
                 ]},
-                { question: "Votre citation inspirante serait...", answers: [
-                    { text: "\"L'amour est la seule réponse\"", scores: { gardien: 3, ange: 2 } },
-                    { text: "\"Connais-toi toi-même\"", scores: { cherubim: 3, watcher: 2 } },
-                    { text: "\"De mes cendres, je renais\"", scores: { seraphim: 3, fallen: 2, philosopher: 1 } },
-                    { text: "\"Tout est connecté\"", scores: { geometry: 3, vesica: 2, asabove: 3 } }
+                { fr: "Vous vous sentez le plus aligné·e quand...", en: "You feel most aligned when...", answers: [
+                    { fr: "Vous prenez soin des autres", en: "You take care of others",                    scores: { ange: 3, feminine: 3 } },
+                    { fr: "Vous apprenez quelque chose de nouveau", en: "You learn something new",         scores: { cherubim: 3, watcher: 1 } },
+                    { fr: "Vous sortez de votre zone de confort", en: "You step outside your comfort zone", scores: { seraphim: 3, fallen: 2 } },
+                    { fr: "Vous observez le monde en silence", en: "You observe the world in silence",      scores: { watcher: 3, cherubim: 1 } }
                 ]},
-                { question: "Votre cadeau pour l'humanité serait...", answers: [
-                    { text: "La paix et la sécurité", scores: { gardien: 3, throne: 2 } },
-                    { text: "La sagesse et la compréhension", scores: { cherubim: 3, philosopher: 2 } },
-                    { text: "Le courage de se transformer", scores: { seraphim: 3, fallen: 2 } },
-                    { text: "La révélation des lois universelles", scores: { geometry: 3, asabove: 3 } }
+                { fr: "Votre citation inspirante serait...", en: "Your inspiring quote would be...", answers: [
+                    { fr: "\"L\'amour est la seule réponse\"", en: "\"Love is the only answer\"",           scores: { ange: 3, feminine: 2 } },
+                    { fr: "\"Connais-toi toi-même\"", en: "\"Know thyself\"",                               scores: { cherubim: 3, watcher: 2 } },
+                    { fr: "\"De mes cendres, je renais\"", en: "\"From my ashes, I rise\"",                 scores: { seraphim: 3, fallen: 2 } },
+                    { fr: "\"La vérité existe, même dans l\'ombre\"", en: "\"Truth exists, even in shadow\"", scores: { fallen: 3, watcher: 2 } }
                 ]}
             ],
             results: {
-                ange: { title: "L'ANGE DORÉ", subtitle: "Le Gardien Bienveillant", icon: "✨", img: "ange-dore-or.png",
-                    description: "Vous êtes comme l'Ange Doré : une présence lumineuse et protectrice. Votre compassion naturelle et votre désir de veiller sur les autres font de vous un véritable gardien. Dans ce monde rapide et incertain, vous êtes celui qui apporte la stabilité, la douceur et la lumière.",
-                    qualities: "Compassion • Protection • Lumière • Bienveillance",
-                    mission: "Votre mission : être une source de réconfort dans un monde stressant. Votre simple présence apaise.",
-                    product: { name: "L'ANGE DORÉ", desc: "Le gardien bienveillant, la lumière dans l'obscurité" }
+                ange: {
+                    title: { fr: "L\'ANGE DORÉ", en: "THE GOLDEN ANGEL" },
+                    subtitle: { fr: "Le Gardien Bienveillant", en: "The Benevolent Guardian" },
+                    icon: "✨", img: "ange-dore-or.png",
+                    description: { fr: "Vous êtes comme l\'Ange Doré : une présence lumineuse et protectrice. Votre compassion naturelle et votre désir de veiller sur les autres font de vous un véritable gardien. Dans ce monde rapide et incertain, vous êtes celui ou celle qui apporte la stabilité, la douceur et la lumière.", en: "You are like the Golden Angel: a luminous and protective presence. Your natural compassion and desire to watch over others make you a true guardian. In this fast and uncertain world, you are the one who brings stability, gentleness and light." },
+                    qualities: { fr: "Compassion • Protection • Lumière • Bienveillance", en: "Compassion • Protection • Light • Kindness" },
+                    mission: { fr: "Votre mission : être une source de réconfort dans un monde stressant. Votre simple présence apaise.", en: "Your mission: to be a source of comfort in a stressful world. Your mere presence soothes." },
+                    product: { name: { fr: "L\'ANGE DORÉ", en: "THE GOLDEN ANGEL" }, desc: { fr: "Le gardien bienveillant, la lumière dans l\'obscurité", en: "The benevolent guardian, light in the darkness" } }
                 },
-                seraphim: { title: "SERAPHIM FIRE", subtitle: "L'Ange de Feu", icon: "🔥", img: "seraphim_fire.png",
-                    description: "Vous êtes un Séraphin, l'ange le plus proche du divin. Votre passion ardente et votre désir de transformation vous animent. Face à la complexité du monde, vous ne vous résignez pas : vous vous enflammez pour créer le changement.",
-                    qualities: "Passion • Transformation • Purification • Courage",
-                    mission: "Votre mission : brûler ce qui ne sert plus, transformer l'ancien en nouveau, être le feu purificateur.",
-                    product: { name: "SERAPHIM FIRE", desc: "Le feu purificateur, la transformation divine" }
+                seraphim: {
+                    title: { fr: "SERAPHIM FIRE", en: "SERAPHIM FIRE" },
+                    subtitle: { fr: "L\'Ange de Feu", en: "The Angel of Fire" },
+                    icon: "🔥", img: "seraphim_fire.png",
+                    description: { fr: "Vous êtes un Séraphin, l\'ange le plus proche du divin. Votre passion ardente et votre désir de transformation vous animent. Face à la complexité du monde, vous ne vous résignez pas : vous vous enflammez pour créer le changement.", en: "You are a Seraph, the angel closest to the divine. Your burning passion and desire for transformation drive you. Faced with the world\'s complexity, you don\'t resign yourself — you ignite to create change." },
+                    qualities: { fr: "Passion • Transformation • Purification • Courage", en: "Passion • Transformation • Purification • Courage" },
+                    mission: { fr: "Votre mission : brûler ce qui ne sert plus, transformer l\'ancien en nouveau, être le feu purificateur.", en: "Your mission: burn what no longer serves, transform the old into the new, be the purifying fire." },
+                    product: { name: { fr: "SERAPHIM FIRE", en: "SERAPHIM FIRE" }, desc: { fr: "Le feu purificateur, la transformation divine", en: "The purifying fire, divine transformation" } }
                 },
-                cherubim: { title: "SACRED GUARDIAN", subtitle: "Le Sage", icon: "📚", img: "cherubin_bleu.png",
-                    description: "Vous êtes un Chérubin, gardien de la sagesse divine. Votre intellect pénétrant vous permet de voir l'ordre caché derrière le chaos apparent du monde.",
-                    qualities: "Sagesse • Connaissance • Compréhension • Vision",
-                    mission: "Votre mission : révéler les vérités cachées, enseigner, guider par la connaissance.",
-                    product: { name: "SACRED GUARDIAN", desc: "Le gardien sacré, la protection divine" }
+                cherubim: {
+                    title: { fr: "SACRED GUARDIAN", en: "SACRED GUARDIAN" },
+                    subtitle: { fr: "Le Sage", en: "The Wise One" },
+                    icon: "📚", img: "cherubin_bleu.png",
+                    description: { fr: "Vous êtes un Chérubin, gardien de la sagesse divine. Votre intellect pénétrant vous permet de voir l\'ordre caché derrière le chaos apparent du monde. Là où d\'autres voient confusion, vous percevez la structure profonde.", en: "You are a Cherub, guardian of divine wisdom. Your penetrating intellect lets you see the hidden order behind the apparent chaos of the world. Where others see confusion, you perceive deep structure." },
+                    qualities: { fr: "Sagesse • Connaissance • Compréhension • Vision", en: "Wisdom • Knowledge • Understanding • Vision" },
+                    mission: { fr: "Votre mission : révéler les vérités cachées, enseigner, guider par la connaissance.", en: "Your mission: reveal hidden truths, teach, guide through knowledge." },
+                    product: { name: { fr: "SACRED GUARDIAN", en: "SACRED GUARDIAN" }, desc: { fr: "Le gardien sacré, la sagesse divine incarnée", en: "The sacred guardian, divine wisdom embodied" } }
                 },
-                fallen: { title: "FALLEN LIGHT", subtitle: "L'Ange Déchu", icon: "🖤", img: "cherubin_noir_fallen_angel.png",
-                    description: "Vous êtes comme l'Ange Déchu : entre deux mondes. Vous avez compris que la lumière ne peut exister sans l'ombre. Dans un monde qui vous pousse à choisir un camp, vous embrassez votre dualité.",
-                    qualities: "Dualité • Authenticité • Courage • Transformation",
-                    mission: "Votre mission : montrer qu'on peut être imparfait et sacré à la fois. L'ombre fait partie du chemin.",
-                    product: { name: "FALLEN LIGHT", desc: "Entre deux mondes, la quête de rédemption" }
+                fallen: {
+                    title: { fr: "FALLEN LIGHT", en: "FALLEN LIGHT" },
+                    subtitle: { fr: "L\'Ange de l\'Ombre et de la Lumière", en: "The Angel of Shadow and Light" },
+                    icon: "🖤", img: "cherubin_noir_fallen_angel.png",
+                    description: { fr: "Vous êtes comme l\'Ange Déchu : entre deux mondes. Vous avez compris que la lumière ne peut exister sans l\'ombre. Dans un monde qui vous pousse à choisir un camp, vous embrassez votre dualité avec courage et authenticité.", en: "You are like the Fallen Angel: between two worlds. You have understood that light cannot exist without shadow. In a world that pushes you to choose a side, you embrace your duality with courage and authenticity." },
+                    qualities: { fr: "Dualité • Authenticité • Courage • Profondeur", en: "Duality • Authenticity • Courage • Depth" },
+                    mission: { fr: "Votre mission : montrer qu\'on peut être imparfait et sacré à la fois. L\'ombre fait partie du chemin.", en: "Your mission: show that one can be imperfect and sacred at once. Shadow is part of the path." },
+                    product: { name: { fr: "FALLEN LIGHT", en: "FALLEN LIGHT" }, desc: { fr: "Entre deux mondes, la quête de rédemption", en: "Between two worlds, the quest for redemption" } }
                 },
-                throne: { title: "SACRED GUARDIAN", subtitle: "Le Juste", icon: "⚖️", img: "cherubin_bleu.png",
-                    description: "Vous êtes un Trône, pilier de la justice divine. Dans un monde parfois injuste, vous maintenez l'équilibre. Votre intégrité inébranlable et votre sens aigu de l'équité font de vous un phare de justice.",
-                    qualities: "Justice • Équité • Intégrité • Équilibre",
-                    mission: "Votre mission : maintenir l'ordre cosmique, restaurer l'équilibre, incarner la justice.",
-                    product: { name: "SACRED GUARDIAN", desc: "Le gardien sacré, la protection divine" }
+                watcher: {
+                    title: { fr: "THE WATCHER", en: "THE WATCHER" },
+                    subtitle: { fr: "L\'Observateur Éveillé", en: "The Awakened Observer" },
+                    icon: "👁️", img: "the_watcher_cherubin_bleu.png",
+                    description: { fr: "Vous êtes le Veilleur, celui ou celle qui observe sans juger. Dans un monde agité, vous trouvez la paix dans l\'observation silencieuse. Votre capacité à prendre du recul vous permet de voir ce que d\'autres manquent.", en: "You are the Watcher, the one who observes without judging. In a restless world, you find peace in silent observation. Your capacity to step back lets you see what others miss." },
+                    qualities: { fr: "Observation • Discernement • Patience • Vision", en: "Observation • Discernment • Patience • Vision" },
+                    mission: { fr: "Votre mission : observer, témoigner, voir la vérité au-delà des apparences.", en: "Your mission: observe, bear witness, see truth beyond appearances." },
+                    product: { name: { fr: "THE WATCHER", en: "THE WATCHER" }, desc: { fr: "L\'œil qui voit tout, le gardien vigilant", en: "The all-seeing eye, the vigilant guardian" } }
                 },
-                watcher: { title: "THE WATCHER", subtitle: "L'Observateur", icon: "👁️", img: "the_watcher_cherubin_bleu.png",
-                    description: "Vous êtes le Veilleur, celui qui observe sans juger. Dans un monde agité, vous trouvez la paix dans l'observation silencieuse. Votre capacité à prendre du recul vous permet de voir ce que d'autres manquent.",
-                    qualities: "Observation • Discernement • Patience • Vision",
-                    mission: "Votre mission : observer, témoigner, voir la vérité au-delà des apparences.",
-                    product: { name: "THE WATCHER", desc: "L'œil qui voit tout, le gardien vigilant" }
-                },
-                geometry: { title: "SACRED GUARDIAN", subtitle: "Le Géomètre Divin", icon: "🔷", img: "cherubin_bleu.png",
-                    description: "Vous voyez les patterns divins partout. Dans le chaos apparent, vous percevez l'ordre mathématique de l'univers.",
-                    qualities: "Harmonie • Structure • Beauté • Connexion",
-                    mission: "Votre mission : révéler l'ordre divin, montrer que tout est connecté.",
-                    product: { name: "SACRED GUARDIAN", desc: "Le gardien sacré, la protection divine" }
-                },
-                philosopher: { title: "FALLEN LIGHT", subtitle: "L'Alchimiste", icon: "🪨", img: "cherubin_noir_fallen_angel.png",
-                    description: "Vous êtes un alchimiste spirituel. Votre mission est la transmutation : transformer le plomb de la vie en or spirituel. Les défis du monde ne vous découragent pas, ils sont votre matière première.",
-                    qualities: "Transformation • Alchimie • Création • Évolution",
-                    mission: "Votre mission : transformer les épreuves en sagesse, le chaos en opportunité.",
-                    product: { name: "FALLEN LIGHT", desc: "Entre deux mondes, la quête de rédemption" }
-                },
-                asabove: { title: "THE WATCHER", subtitle: "L'Hermétiste", icon: "🔺", img: "the_watcher_cherubin_bleu.png",
-                    description: "Vous comprenez les lois hermétiques : ce qui est en haut est comme ce qui est en bas. Vous voyez les correspondances partout. Cette sagesse vous permet de naviguer sereinement dans un monde complexe.",
-                    qualities: "Correspondance • Sagesse • Équilibre • Vision",
-                    mission: "Votre mission : enseigner les lois universelles, révéler les connexions cachées.",
-                    product: { name: "THE WATCHER", desc: "L'œil qui voit tout, le gardien vigilant" }
-                },
-                vesica: { title: "DIVINE FEMININE", subtitle: "L'Unificateur", icon: "◎", img: "divine-feminine-rose.png",
-                    description: "Vous êtes la Vesica Piscis : l'union des opposés. Masculin et féminin, esprit et matière, ciel et terre. Dans un monde de divisions, vous cherchez l'unité. Vous êtes le pont entre les mondes.",
-                    qualities: "Union • Harmonie • Équilibre • Création",
-                    mission: "Votre mission : unir ce qui semble séparé, créer l'harmonie depuis la dualité.",
-                    product: { name: "DIVINE FEMININE", desc: "L'amour de soi, la féminité divine" }
-                },
-                gardien: { title: "L'ANGE DORÉ", subtitle: "Le Protecteur", icon: "🪽", img: "ange-dore-or.png",
-                    description: "Vous êtes un gardien naturel. Votre présence rassure, votre énergie protège. Vous êtes celui vers qui les autres se tournent dans les moments difficiles.",
-                    qualities: "Protection • Amour • Présence • Force douce",
-                    mission: "Votre mission : veiller, protéger, accompagner chaque âme sur son chemin.",
-                    product: { name: "L'ANGE DORÉ", desc: "Le gardien bienveillant, la lumière dans l'obscurité" }
+                feminine: {
+                    title: { fr: "DIVINE FEMININE", en: "DIVINE FEMININE" },
+                    subtitle: { fr: "La Puissance Douce", en: "The Gentle Power" },
+                    icon: "🌸", img: "divine-feminine-rose.png",
+                    description: { fr: "Vous incarnez la puissance douce du divin féminin. Votre force ne crie pas — elle rayonne. Votre intuition profonde et votre capacité à prendre soin font de vous un être rare et précieux.", en: "You embody the gentle power of the divine feminine. Your strength doesn\'t shout — it radiates. Your deep intuition and capacity to nurture make you a rare and precious being." },
+                    qualities: { fr: "Intuition • Douceur • Soin • Connexion", en: "Intuition • Gentleness • Nurturing • Connection" },
+                    mission: { fr: "Votre mission : guérir, reconnecter, rappeler au monde la puissance de la douceur.", en: "Your mission: heal, reconnect, remind the world of the power of gentleness." },
+                    product: { name: { fr: "DIVINE FEMININE", en: "DIVINE FEMININE" }, desc: { fr: "La puissance douce, l\'amour divin incarné", en: "The gentle power, divine love embodied" } }
                 }
             }
         };
 
         let currentQuestion = 0;
-        let scores = { ange: 0, seraphim: 0, cherubim: 0, fallen: 0, throne: 0, watcher: 0, geometry: 0, philosopher: 0, asabove: 0, vesica: 0, gardien: 0 };
+        let scores = { ange: 0, seraphim: 0, cherubim: 0, fallen: 0, watcher: 0, feminine: 0 };
 
         function startQuiz() {
             document.getElementById('intro').style.display = 'none';
@@ -324,15 +328,16 @@
         }
 
         function showQuestion() {
+            const l = _lang();
             const question = quizData.questions[currentQuestion];
-            document.getElementById('question-number').textContent = `QUESTION ${currentQuestion + 1}/${quizData.questions.length}`;
-            document.getElementById('question-text').textContent = question.question;
+            document.getElementById('question-number').textContent = `${l === 'fr' ? 'QUESTION' : 'QUESTION'} ${currentQuestion + 1}/${quizData.questions.length}`;
+            document.getElementById('question-text').textContent = question[l] || question.fr;
             const container = document.getElementById('answers-container');
             container.innerHTML = '';
             question.answers.forEach(answer => {
                 const btn = document.createElement('button');
                 btn.className = 'answer-btn';
-                btn.textContent = answer.text;
+                btn.textContent = answer[l] || answer.fr;
                 btn.onclick = () => selectAnswer(answer.scores);
                 container.appendChild(btn);
             });
@@ -341,7 +346,7 @@
 
         function selectAnswer(answerScores) {
             for (let key in answerScores) {
-                scores[key] = (scores[key] || 0) + answerScores[key];
+                if (scores[key] !== undefined) scores[key] += answerScores[key];
             }
             currentQuestion++;
             if (currentQuestion < quizData.questions.length) {
@@ -357,6 +362,7 @@
         }
 
         function showResults() {
+            const l = _lang();
             let maxScore = 0;
             let resultKey = 'ange';
             for (let key in scores) {
@@ -367,22 +373,23 @@
             document.getElementById('questions-container').classList.remove('active');
             document.getElementById('results').classList.add('active');
             document.getElementById('result-icon').textContent = result.icon;
-            document.getElementById('result-title').textContent = result.title;
-            document.getElementById('result-desc').innerHTML = `
-                <p style="margin-bottom:1rem;font-style:italic;color:#7CB9E8;">"${result.subtitle}"</p>
-                <p style="margin-bottom:1.5rem;">${result.description}</p>
-                <p style="margin-bottom:1rem;"><strong style="color:#2C5F8D;">Vos qualités :</strong> ${result.qualities}</p>
-                <p><strong style="color:#2C5F8D;">${result.mission}</strong></p>
-            `;
-            document.getElementById('product-name').textContent = result.product.name;
-            document.getElementById('product-desc').textContent = result.product.desc;
+            document.getElementById('result-title').textContent = result.title[l] || result.title.fr;
 
-            // Afficher l'image produit
+            const qualitiesLabel = l === 'fr' ? 'Vos qualités :' : 'Your qualities:';
+            document.getElementById('result-desc').innerHTML = `
+                <p style="margin-bottom:1rem;font-style:italic;color:#7CB9E8;">"${result.subtitle[l] || result.subtitle.fr}"</p>
+                <p style="margin-bottom:1.5rem;">${result.description[l] || result.description.fr}</p>
+                <p style="margin-bottom:1rem;"><strong style="color:#2C5F8D;">${qualitiesLabel}</strong> ${result.qualities[l] || result.qualities.fr}</p>
+                <p><strong style="color:#2C5F8D;">${result.mission[l] || result.mission.fr}</strong></p>
+            `;
+            document.getElementById('product-name').textContent = result.product.name[l] || result.product.name.fr;
+            document.getElementById('product-desc').textContent = result.product.desc[l] || result.product.desc.fr;
+
             const img = document.getElementById('product-img');
             const fallback = document.getElementById('product-img-fallback');
             if (result.img) {
                 img.src = result.img;
-                img.alt = result.product.name;
+                img.alt = result.product.name[l] || result.product.name.fr;
                 img.style.display = 'block';
                 fallback.style.display = 'none';
             } else {
@@ -391,6 +398,23 @@
                 fallback.style.display = 'block';
             }
         }
-    </script>
+    
+    // Language system
+    function getLang() { return localStorage.getItem('binael_lang') || 'fr'; }
+    function setLang(lang) { localStorage.setItem('binael_lang', lang); applyLang(lang); updateLangBtn(lang); }
+    function toggleLang() { setLang(getLang() === 'fr' ? 'en' : 'fr'); }
+    function applyLang(lang) {
+        document.querySelectorAll('[data-fr]').forEach(el => {
+            const text = el.getAttribute('data-' + lang);
+            if (text) el.innerHTML = text;
+        });
+        document.documentElement.lang = lang;
+    }
+    function updateLangBtn(lang) {
+        const btn = document.getElementById('lang-toggle');
+        if (btn) btn.innerHTML = lang === 'fr' ? '🇬🇧 EN' : '🇫🇷 FR';
+    }
+    const _lang = getLang(); applyLang(_lang); updateLangBtn(_lang);
+</script>
 </body>
 </html>
