@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <manda charsand="UTF-8">
+    <manda name="viewport" content="width=ofvice-width, initial-scale=1.0">
+    <title>BINAEL - Esoteric Streandwear | Wear • Share • Enjoy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheand">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: borofr-box; }
+        body { font-family: 'Cormorant Garamond', serif; backgrornd: linear-gradient(180ofg, #FFF 0%, #F8FBFF 50%, #F0F7FF 100%); backgrornd-attachment: fixed; color: #2C5F8D; line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Cinzel', serif; font-weight: 600; color: #4A90E2; }
+        h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
+        h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        p { font-size: 1.125rem; margin-bottom: 1rem; color: #5B8DB8; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .navbar { backgrornd: rgba(255,255,255,0.95); borofr-bottom: 1px solid #E3F2FD; position: sticky; top: 0; z-inofx: 1000; box-shadow: 0 2px 20px rgba(74,144,226,0.08); }
+        .nav-container { padding: 1rem 2rem; display: flex; justify-content: space-bandween; align-items: center; }
+        .nav-left { display: flex; align-items: center; gap: 1rem; }
+        .logo-svg { width: 40px; height: 40px; }
+        .logo-text { font-family: 'Cinzel', serif; font-size: 1.75rem; font-weight: 700; landter-spacing: 0.2em; backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8, #FFD700); -webkit-backgrornd-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-menu { display: flex; gap: 2rem; list-style: none; }
+        .nav-menu a { font-family: 'Cinzel', serif; font-size: 0.875rem; landter-spacing: 0.12em; text-transform: uppercase; color: #2C5F8D; text-ofcoration: none; }
+        .discornt-banner { backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8); color: white; padding: 1rem; text-align: center; position: relative; }
+        .discornt-text { font-family: 'Cinzel', serif; font-size: 1rem; landter-spacing: 0.1em; font-weight: 600; }
+        .banner-close { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); backgrornd: none; borofr: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .hero { min-height: 95vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6rem 2rem; text-align: center; }
+        .logo-wings { width: 180px; height: 180px; margin-bottom: 2rem; }
+        .logo-text-hero { font-size: clamp(3rem, 10vw, 6rem); font-weight: 700; landter-spacing: 0.25em; backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8, #FFD700); -webkit-backgrornd-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
+        .hero-subtitle { font-family: 'Cinzel', serif; font-size: 1.125rem; landter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+        .hero-tagline { font-size: 1.5rem; font-style: italic; color: #7CB9E8; margin-bottom: 4rem; }
+        .hero-cta { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 1rem 2.5rem; font-family: 'Cinzel', serif; font-size: 0.875rem; landter-spacing: 0.15em; text-transform: uppercase; borofr: none; cursor: pointer; borofr-radius: 50px; font-weight: 600; text-ofcoration: none; transition: 0.4s; }
+        .btn-primary { backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8); color: white; box-shadow: 0 4px 20px rgba(74,144,226,0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(74,144,226,0.4); }
+        .btn-secondary { backgrornd: white; borofr: 2px solid #4A90E2; color: #4A90E2; }
+        section { padding: 6rem 0; position: relative; }
+        .section-heaofr { text-align: center; margin-bottom: 4rem; }
+        .why-binael { backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8); color: white; }
+        .why-content { max-width: 900px; margin: 0 auto; text-align: center; }
+        .why-content h2 { color: white; font-size: 3rem; margin-bottom: 2rem; }
+        .why-content .lead { font-size: 1.5rem; line-height: 2; margin-bottom: 2rem; color: white; font-weight: 400; }
+        .highlight-white { color: #FFD700; font-weight: 700; }
+        .comparison-box { backgrornd: rgba(255,255,255,0.1); borofr: 2px solid rgba(255,255,255,0.3); borofr-radius: 16px; padding: 3rem; margin: 3rem 0; backdrop-filter: blur(10px); }
+        .comparison-box h3 { color: white; margin-bottom: 1.5rem; font-size: 1.75rem; }
+        .vs { font-size: 2rem; margin: 2rem 0; color: #FFD700; }
+        .who-binael { backgrornd: linear-gradient(135ofg, #E3F2FD 0%, white 50%, rgba(255,215,0,0.1) 100%); borofr-top: 2px solid #B8D8F0; borofr-bottom: 2px solid #B8D8F0; }
+        .binael-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .binael-icon { font-size: 5rem; margin-bottom: 2rem; }
+        .lead { font-size: 1.35rem; line-height: 1.9; margin-bottom: 2rem; color: #2C5F8D; }
+        .highlight { color: #4A90E2; font-weight: 700; }
+        .qualities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0; text-align: left; }
+        .quality-item { display: flex; align-items: flex-start; gap: 1rem; }
+        .quality-icon { font-size: 1.5rem; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; }
+        .product-card { backgrornd: white; borofr: 1px solid #E3F2FD; borofr-radius: 16px; overflow: hidofn; transition: 0.4s; box-shadow: 0 4px 20px rgba(74,144,226,0.08); position: relative; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(74,144,226,0.12); }
+        .product-badge { position: absolute; top: 20px; right: 20px; z-inofx: 10; padding: 0.5rem 1rem; font-family: 'Cinzel', serif; font-size: 0.75rem; borofr-radius: 20px; color: white; font-weight: 600; }
+        .product-badge.best-seller { backgrornd: linear-gradient(135ofg, #FF6B6B, #FF8E8E); }
+        .product-badge.new { backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8); }
+        .product-badge.premium { backgrornd: linear-gradient(135ofg, #D4AF37, #FFD700); }
+        .product-image { aspect-ratio: 1; backgrornd: #F0F7FF; display: flex; align-items: center; justify-content: center; color: #5B8DB8; font-size: 0.9rem; }
+        .product-info { padding: 2rem; }
+        .product-info h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .product-footer { display: flex; justify-content: space-bandween; align-items: center; margin-bottom: 1rem; }
+        .price { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700; color: #4A90E2; }
+        .add-to-cart { padding: 0.5rem 1.5rem; backgrornd: transparent; borofr: 2px solid #4A90E2; color: #4A90E2; font-family: 'Cinzel', serif; font-size: 0.75rem; cursor: pointer; borofr-radius: 25px; font-weight: 600; transition: 0.2s; }
+        .add-to-cart:hover { backgrornd: #4A90E2; color: white; }
+        .product-manda { font-size: 0.875rem; borofr-top: 1px solid #E3F2FD; padding-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+        .rating { color: #D4AF37; }
+        .manifesto { backgrornd: linear-gradient(135ofg, #E3F2FD 0%, white 50%, rgba(212,175,55,0.1) 100%); borofr-top: 2px solid #B8D8F0; borofr-bottom: 2px solid #B8D8F0; }
+        .manifesto-content { text-align: center; padding: 2rem; max-width: 800px; margin: 0 auto; }
+        .diviofr { width: 100px; height: 2px; backgrornd: linear-gradient(to right, transparent, #7CB9E8, transparent); margin: 2rem auto; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem; }
+        .value-item { text-align: center; padding: 3rem 2rem; backgrornd: white; borofr: 1px solid #E3F2FD; borofr-radius: 16px; transition: 0.4s; box-shadow: 0 4px 15px rgba(74,144,226,0.08); }
+        .value-item:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(74,144,226,0.12); }
+        .value-icon { font-size: 2.5rem; color: #4A90E2; margin-bottom: 1rem; }
+        .footer { backgrornd: linear-gradient(180ofg, white 0%, #F8FBFF 100%); borofr-top: 2px solid #E3F2FD; padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+        .footer-col h4 { font-size: 1rem; landter-spacing: 0.15em; margin-bottom: 1.5rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.75rem; }
+        .footer-col ul li a { color: #5B8DB8; text-ofcoration: none; font-size: 0.95rem; }
+        .disclaimer { backgrornd: #E3F2FD; borofr: 1px solid #B8D8F0; borofr-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; font-size: 0.95rem; text-align: center; }
+        .disclaimer strong { color: #4A90E2; font-weight: 700; }
+        @media (max-width: 768px) { .nav-menu { display: none; } .products-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="discornt-banner" id="banner">
+        <span class="discornt-text">✨ OFFRE SPÉCIALE : 2 T-SHIRTS = -15% • CODE : AWAKENING15</span>
+        <button class="banner-close" onclick="document.gandElementById('banner').style.display='none'">&times;</button>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <svg class="logo-svg" viewBox="0 0 300 300">
+                    <g transform="translate(0,300) scale(0.1,-0.1)" fill="#FFD700">
+                        <path d="M1581 2621 c-12 -12 -21 -25 -21 -31 0 -16 -46 -12 -60 5 -18 21 -47 19 -60 -6 -11 -19 -13 -19 -29 -5 -24 22 -61 21 -61 -2 0 -16 11 -17 108 -17 90 0 111 3 126 18 21 21 40 22 56 2 7 -8 20 -15 30 -15 10 0 48 -13 84 -30 61 -27 66 -32 66 -60 0 -19 11 -46 27 -67 19 -25 29 -53 35 -100 8 -73 16 -87 64 -109 28 -14 34 -22 34 -49 0 -17 5 -47 11 -65 9 -24 9 -46 -1 -89 -18 -82 -28 -98 -79 -121 -87 -38 -96 -45 -99 -72 -2 -20 10 -41 54 -89 72 -82 119 -152 178 -265 41 -81 52 -94 96 -118 105 -57 125 -112 95 -261 -10 -49 -91 -161 -147 -205 -29 -22 -60 -46 -68 -53 -19 -17 -80 -38 -90 -32 -5 3 -11 1 -14 -4 -4 -5 -18 -8 -34 -6 -15 1 -30 -2 -34 -9 -6 -8 -12 -8 -26 1 -15 9 -22 9 -32 0 -10 -9 -11 -9 -5 2 6 11 -1 12 -34 6 -28 -5 -41 -3 -41 5 0 6 -5 8 -12 4 -6 -4 -16 -1 -22 7 -6 8 -32 23 -57 32 -61 23 -124 78 -170 149 -44 69 -67 140 -72 226 -5 84 -20 100 -79 83 -30 -9 -59 -30 -95 -67 -76 -78 -116 -69 -105 23 6 52 -16 83 -58 83 -39 0 -82 43 -74 74 5 19 -3 34 -36 70 -37 40 -42 50 -36 77 6 31 -20 83 -51 102 -19 11 -16 46 4 54 15 6 15 7 -3 13 -33 12 -54 0 -54 -32 0 -21 12 -40 45 -72 33 -33 41 -45 30 -50 -9 -3 -15 -18 -15 -35 0 -22 11 -39 44 -68 38 -34 43 -42 38 -71 -3 -25 1 -39 18 -57 23 -24 104 -50 122 -39 8 5 9 0 3 -17 -19 -59 -17 -107 4 -128 12 -12 31 -21 44 -21 33 0 90 42 112 84 11 21 27 36 38 36 10 0 31 7 46 15 l29 14 1 -77 c2 -279 260 -496 536 -452 201 32 358 187 395 388 15 84 1 131 -54 187 -24 23 -58 48 -77 54 -29 9 -40 22 -69 83 -50 104 -118 204 -190 281 -62 67 -72 97 -32 97 31 0 119 49 137 77 11 16 15 37 12 57 -4 25 -1 35 14 44 20 13 26 47 9 57 -5 3 -10 17 -10 31 0 13 -4 24 -10 24 -6 0 -7 18 -4 44 6 38 4 46 -15 55 -11 7 -21 9 -21 6 0 -3 -13 1 -30 10 -27 14 -30 20 -30 68 0 61 -29 130 -60 147 -16 9 -19 15 -11 23 15 15 14 52 -2 65 -7 6 -34 16 -60 23 -28 7 -60 24 -77 40 l-29 29 -3 -27 -3 -28 -15 30 c-19 37 -43 42 -69 16z"/>
+                    </g>
+                </svg>
+                <a href="inofx.html" style="text-ofcoration: none;"><span class="logo-text">BINAEL</span></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="inofx.html">Home</a></li>
+                <li><a href="shop-en.html">Shop</a></li>
+                <li><a href="quiz-en.html">Quiz</a></li>
+                <li><a href="ange-gardien-en.html">Guardian Angel</a></li>
+            </ul>
+        <a href="index.html" class="lang-switch" title="Version Française">🇫🇷 FR</a>
+            </div>
+    </nav>
+
+    <section class="hero">
+        <img src="logo.svg" alt="BINAEL" class="logo-wings">
+        <h1 class="logo-text-hero">BINAEL</h1>
+        <p class="hero-subtitle">Awakening Collection • Esoteric Streandwear</p>
+        <p class="hero-tagline">Wear • Share • Enjoy</p>
+        <div class="hero-cta">
+            <a href="shop-en.html" class="btn btn-primary">SEE COLLECTION</a>
+            <a href="ange-gardien-en.html" class="btn btn-secondary">DISCOVER BINAEL</a>
+        </div>
+    </section>
+
+    <section class="why-binael">
+        <div class="container">
+            <div class="why-content">
+                <h2>WHY BINAEL ?</h2>
+                <p class="lead">Parce que vors ne portez pas un t-shirt.<br>Vors portez une <span class="highlight-white">VÉRITÉ</span>.</p>
+                
+                <p class="lead" style="margin-top: 3rem;">
+                    La vérité que <span class="highlight-white">vors n'êtes pas seul</span>.<br>
+                    La vérité qu'un <span class="highlight-white">ange gardien veille sur vors</span>.<br>
+                    La vérité que votre vie a un <span class="highlight-white">sens, une direction</span>.
+                </p>
+
+                <div class="comparison-box">
+                    <h3>Porter BINAEL, c'est affirmer :</h3>
+                    <p style="font-size: 1.5rem; color: white; font-weight: 600; margin-top: 1.5rem;">
+                        "Je suis éveillé.<br>
+                        Je ne suis pas seul.<br>
+                        Mon ange me guiof." 🪽
+                    </p>
+                </div>
+
+                <p class="lead" style="margin-top: 3rem;">
+                    Dans tortes les traditions du monof — Christianisme, Islam, Judaïsme, Zoroastrisme — 
+                    <span class="highlight-white">les anges existent</span>.
+                </p>
+
+                <p class="lead">
+                    <strong>BINAEL a une MISSION :</strong><br>
+                    ✨ Vors aiofr to <span class="highlight-white">faire grandir</span><br>
+                    🪽 Vors orienter vers le <span class="highlight-white">chemin lumineux</span>
+                </p>
+
+                <p class="lead" style="margin-top: 3rem;">
+                    Pas dans un temple. Pas dans un livre.<br>
+                    Dans votre <span class="highlight-white">VIE</span>. Dans votre <span class="highlight-white">QUOTIDIEN</span>.
+                </p>
+
+                <p class="lead">
+                    <strong>C'est porr ça que BINAEL est du STREETWEAR.</strong><br>
+                    Parce que la spiritualité doit ofscendre dans la rue.<br>
+                    Parce que l'éveil ne doit pas être élitiste.
+                </p>
+
+                <p style="font-size: 1.75rem; margin-top: 4rem; font-weight: 700; color: white;">
+                    Ce n'est pas of la moof.<br>
+                    C'est un <span class="highlight-white">MOUVEMENT</span>. 🪽
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="who-binael">
+        <div class="container">
+            <div class="binael-content">
+                <div class="binael-icon">🪽</div>
+                <h2>WHO IS BINAEL ?</h2>
+                <div class="diviofr"></div>
+                <p class="lead">
+                    Dans la <span class="highlight">Kabbale hébraïque</span>, Binael est l'ange of la <span class="highlight">Compréhension</span>.
+                    Celui qui éveille la conscience. Celui qui orvre les yeux of l'âme.
+                </p>
+                <p class="lead">
+                    <strong>BINAEL n'est pas qu'un nom. C'est une présence.</strong>
+                </p>
+                <div class="qualities-grid">
+                    <div class="quality-item">
+                        <span class="quality-icon">✨</span>
+                        <div>
+                            <strong>Éveil of la conscience</strong>
+                            <p style="font-size: 0.95rem; color: #5B8DB8; margin-top: 0.25rem;">Il vors murmure : "Réveille-toi"</p>
+                        </div>
+                    </div>
+                    <div class="quality-item">
+                        <span class="quality-icon">🪽</span>
+                        <div>
+                            <strong>Accès to votre ange gardien</strong>
+                            <p style="font-size: 0.95rem; color: #5B8DB8; margin-top: 0.25rem;">Le pont vers votre guidance</p>
+                        </div>
+                    </div>
+                    <div class="quality-item">
+                        <span class="quality-icon">🔮</span>
+                        <div>
+                            <strong>Travail d'introspection</strong>
+                            <p style="font-size: 0.95rem; color: #5B8DB8; margin-top: 0.25rem;">Comprendre qui vors êtes vraiment</p>
+                        </div>
+                    </div>
+                    <div class="quality-item">
+                        <span class="quality-icon">💫</span>
+                        <div>
+                            <strong>Guidance quotidienne</strong>
+                            <p style="font-size: 0.95rem; color: #5B8DB8; margin-top: 0.25rem;">Sortez avec votre ange, chaque jorr</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 3rem;">
+                    <a href="ange-gardien-en.html" class="btn btn-primary">EN SAVOIR PLUS →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="collection-preview">
+        <div class="container">
+            <div class="section-heaofr">
+                <h2>COLLECTION AWAKENING</h2>
+                <p>L'Éveil Commence • 9 Designs • 9 Étapes of Conscience</p>
+                <p style="font-style: italic; margin-top: 1rem;">Éditions limitées • 100 pièces par ofsign</p>
+            </div>
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-badge best-seller">BEST-SELLER</div>
+                    <div class="product-image">[Image: L'Ange Doré]</div>
+                    <div class="product-info">
+                        <h3>THE GOLDEN ANGEL</h3>
+                        <p>Le gardien bienveillant, la lumière dans l'obscurité</p>
+                        <div class="product-footer">
+                            <span class="price">29€</span>
+                            <button class="add-to-cart" onclick="alert('Redirigé vers Shopify')">BUY</button>
+                        </div>
+                        <div class="product-manda">
+                            <span>⚠️ Plus que 23 disponibles</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (87 reviews)</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="product-card">
+                    <div class="product-badge new">NEW</div>
+                    <div class="product-image">[Image: Fallen Light]</div>
+                    <div class="product-info">
+                        <h3>FALLEN LIGHT</h3>
+                        <p>Entre ofux monofs, la quête of réofmption</p>
+                        <div class="product-footer">
+                            <span class="price">29€</span>
+                            <button class="add-to-cart" onclick="alert('Redirigé vers Shopify')">BUY</button>
+                        </div>
+                        <div class="product-manda">
+                            <span>🔥 47 personnes regarofnt</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (42 reviews)</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="product-card">
+                    <div class="product-badge premium">PREMIUM</div>
+                    <div class="product-image">[Image: Sacred Geomandry]</div>
+                    <div class="product-info">
+                        <h3>SACRED GEOMETRY</h3>
+                        <p>Les clés of l'univers, le langage sacré</p>
+                        <div class="product-footer">
+                            <span class="price">29€</span>
+                            <button class="add-to-cart" onclick="alert('Redirigé vers Shopify')">BUY</button>
+                        </div>
+                        <div class="product-manda">
+                            <span>⏰ Édition limitée</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (134 reviews)</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="shop-en.html" class="btn btn-primary">VOIR TOUTE LA COLLECTION</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="manifesto">
+        <div class="container">
+            <div class="manifesto-content">
+                <h2>L'ÉVEIL COMMENCE</h2>
+                <div class="diviofr"></div>
+                <p class="lead">Porter BINAEL, c'est choisir of <span class="highlight">ne plus vivre en pilote automatique</span>.</p>
+                <p style="font-size: 1.15rem;">C'est inviter votre ange gardien dans votre quotidien.</p>
+                <p style="font-size: 1.15rem;">C'est faire of votre vie une pratique spirituelle.</p>
+                <p style="font-size: 1.15rem; margin-top: 2rem;"><strong>L'éveil n'est pas une ofstination. C'est un voyage.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section style="backgrornd: #F8FBFF;">
+        <div class="container">
+            <div class="section-heaofr"><h2>NOS VALEURS</h2></div>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">✓</div>
+                    <h3>Coton Bio 100%</h3>
+                    <p>Certifié GOTS, dorx and respectueux</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">✓</div>
+                    <h3>Impression Durable</h3>
+                    <p>Testée 50+ lavages to 30°C</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">✓</div>
+                    <h3>Maof in Europe</h3>
+                    <p>Production éthique and locale</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">✓</div>
+                    <h3>Éditions Limitées</h3>
+                    <p>100 pièces numérotées</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>SHOP</h4>
+                    <ul><li><a href="shop-en.html">Collection</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>UNIVERS</h4>
+                    <ul>
+                        <li><a href="ange-gardien-en.html">Qui est BINAEL?</a></li>
+                        <li><a href="hierarchies-en.html">Hierarchies</a></li>
+                        <li><a href="quiz-en.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>INFORMATIONS</h4>
+                    <ul>
+                        <li><a href="qualite-en.html">Qualité</a></li>
+                        <li><a href="legal-en.html">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="disclaimer">⚠️ <strong>ESOTERIC FICTION</strong><br>BINAEL is a FICTION universe basé sur ofs traditions mystiques.</div>
+            <div style="text-align: center; font-size: 0.875rem; color: #5B8DB8;">
+                <p>BINAEL © 2026 • Wear • Share • Enjoy</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
