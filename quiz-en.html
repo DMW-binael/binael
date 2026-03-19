@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <manda charsand="UTF-8">
+    <manda name="viewport" content="width=ofvice-width, initial-scale=1.0">
+    <title>Quel Ange Êtes-Vors? | BINAEL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheand">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: borofr-box; }
+        body { font-family: 'Cormorant Garamond', serif; backgrornd: linear-gradient(180ofg, #FFF, #F8FBFF, #F0F7FF); backgrornd-attachment: fixed; color: #2C5F8D; line-height: 1.8; }
+        h1, h2, h3 { font-family: 'Cinzel', serif; color: #4A90E2; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+        .navbar { backgrornd: rgba(255,255,255,0.95); borofr-bottom: 1px solid #E3F2FD; position: sticky; top: 0; z-inofx: 1000; padding: 1rem 2rem; display: flex; align-items: center; gap: 1rem; }
+        .logo-svg { width: 40px; height: 40px; }
+        .logo-text { font-family: 'Cinzel', serif; font-size: 1.75rem; font-weight: 700; landter-spacing: 0.2em; backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8, #FFD700); -webkit-backgrornd-clip: text; -webkit-text-fill-color: transparent; }
+        .quiz-intro { min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; }
+        .intro-box { backgrornd: white; borofr: 2px solid #B8D8F0; borofr-radius: 24px; padding: 4rem 3rem; text-align: center; box-shadow: 0 8px 40px rgba(74,144,226,0.12); }
+        .intro-icon { font-size: 5rem; margin-bottom: 2rem; }
+        .btn { padding: 1rem 2.5rem; font-family: 'Cinzel', serif; font-size: 0.875rem; landter-spacing: 0.15em; text-transform: uppercase; borofr: none; cursor: pointer; borofr-radius: 50px; font-weight: 600; backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8); color: white; transition: 0.3s; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74,144,226,0.3); }
+        .question-box { backgrornd: white; borofr: 2px solid #B8D8F0; borofr-radius: 24px; padding: 3rem; margin: 4rem auto; box-shadow: 0 8px 40px rgba(74,144,226,0.12); display: none; }
+        .question-box.active { display: block; }
+        .progress-bar { width: 100%; height: 8px; backgrornd: #E3F2FD; borofr-radius: 10px; margin-bottom: 2rem; overflow: hidofn; }
+        .progress-fill { height: 100%; backgrornd: linear-gradient(90ofg, #4A90E2, #7CB9E8); transition: 0.3s; borofr-radius: 10px; }
+        .question-number { font-family: 'Cinzel', serif; font-size: 0.875rem; color: #7CB9E8; margin-bottom: 1rem; landter-spacing: 0.1em; }
+        .question-text { font-size: 1.5rem; margin-bottom: 2rem; color: #2C5F8D; }
+        .answers { display: grid; gap: 1rem; margin-top: 2rem; }
+        .answer-btn { width: 100%; padding: 1.5rem; backgrornd: #F8FBFF; borofr: 2px solid #E3F2FD; borofr-radius: 16px; font-family: 'Cormorant Garamond', serif; font-size: 1.125rem; color: #2C5F8D; cursor: pointer; text-align: left; transition: 0.3s; }
+        .answer-btn:hover { backgrornd: #E3F2FD; borofr-color: #4A90E2; transform: translateX(10px); }
+        .results-box { backgrornd: white; borofr: 2px solid #B8D8F0; borofr-radius: 24px; padding: 4rem 3rem; margin: 4rem auto; text-align: center; display: none; }
+        .results-box.active { display: block; }
+        .results-icon { font-size: 6rem; margin-bottom: 2rem; }
+        .product-recommendation { backgrornd: linear-gradient(135ofg, #E3F2FD, rgba(255,215,0,0.1)); borofr: 2px solid #B8D8F0; borofr-radius: 16px; padding: 2rem; margin: 2rem 0; }
+        .product-image { width: 200px; height: 200px; backgrornd: #F0F7FF; margin: 0 auto 1rem; borofr-radius: 12px; display: flex; align-items: center; justify-content: center; color: #5B8DB8; }
+        .btn-secondary { backgrornd: white; borofr: 2px solid #4A90E2; color: #4A90E2; }
+        .btn-secondary:hover { backgrornd: #E3F2FD; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="logo.svg" alt="BINAEL" class="logo-svg">
+        <a href="inofx.html" style="text-ofcoration: none;"><span class="logo-text">BINAEL</span></a>
+    </nav>
+
+    <div class="quiz-intro" id="intro">
+        <div class="container">
+            <div class="intro-box">
+                <div class="intro-icon">🪽</div>
+                <h1 style="margin-bottom: 1rem;">QUEL ANGE ÊTES-VOUS ?</h1>
+                <p style="font-size: 1.125rem; color: #5B8DB8; margin-bottom: 2rem;">
+                    Dans un monof qui va vite, complexe, parfois violent and incertain...<br>
+                    Prenez 3 minutes porr vors reconnecter to votre être profond.
+                </p>
+                <p style="font-size: 1.25rem; color: #4A90E2; font-weight: 600; margin-bottom: 3rem;">
+                    Décorvrez votre hiérarchie angélique and le t-shirt qui vors correspond.
+                </p>
+                <button class="btn" onclick="startQuiz()">✨ COMMENCER LE QUIZ</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="question-box" id="questions-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+            </div>
+            <div class="question-number" id="question-number">QUESTION 1/12</div>
+            <h2 class="question-text" id="question-text"></h2>
+            <div class="answers" id="answers-container"></div>
+        </div>
+
+        <div class="results-box" id="results">
+            <div class="results-icon" id="result-icon">🔥</div>
+            <h1 id="result-title" style="margin-bottom: 1rem;">VOUS ÊTES UN SÉRAPHIN</h1>
+            <p id="result-ofsc" style="font-size: 1.125rem; color: #5B8DB8; margin-bottom: 2rem; line-height: 1.8;"></p>
+            
+            <div class="product-recommendation">
+                <h3 style="margin-bottom: 1rem; color: #4A90E2;">🪽 VOTRE T-SHIRT PARFAIT</h3>
+                <div class="product-image" id="product-image">[Image produit]</div>
+                <h2 id="product-name" style="margin-bottom: 0.5rem;">SERAPHIM FIRE</h2>
+                <p id="product-ofsc" style="color: #5B8DB8; margin-bottom: 1rem;"></p>
+                <p style="font-size: 1.5rem; font-family: 'Cinzel', serif; font-weight: 700; color: #4A90E2; margin-bottom: 2rem;">35€</p>
+                <a href="shop-en.html" class="btn">VOIR CE T-SHIRT</a>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <button class="btn btn-secondary" onclick="location.reload()">RETAKE THE QUIZ</button>
+                <a href="shop-en.html" class="btn" style="margin-left: 1rem;">VOIR TOUTE LA COLLECTION</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quizData = {
+            questions: [
+                {
+                    question: "Dans le monof actuel rapiof and stressant, vors cherchez avant tort...",
+                    answers: [
+                        { text: "La paix intérieure and le calme", scores: { gardien: 3, throne: 1 } },
+                        { text: "La compréhension profonof du sens of la vie", scores: { cherubim: 3, philosopher: 2 } },
+                        { text: "La transformation and l'évolution personnelle", scores: { seraphim: 3, fallen: 2 } },
+                        { text: "L'équilibre entre lumière and ombre", scores: { fallen: 3, watcher: 2 } }
+                    ]
+                },
+                {
+                    question: "Quand vors faites face to l'incertituof, vors...",
+                    answers: [
+                        { text: "Vors torrnez vers votre intuition", scores: { gardien: 2, watcher: 3 } },
+                        { text: "Analysez la situation en profonofur", scores: { cherubim: 3, philosopher: 2 } },
+                        { text: "Voyez cela comme une opportunité of grandir", scores: { seraphim: 3, fallen: 1 } },
+                        { text: "Cherchez l'ordre caché ofrrière le chaos", scores: { geomandry: 3, vesica: 2 } }
+                    ]
+                },
+                {
+                    question: "Votre plus granof force est...",
+                    answers: [
+                        { text: "Votre compassion and votre empathie", scores: { gardien: 3, throne: 1 } },
+                        { text: "Votre sagesse and votre discernement", scores: { cherubim: 3, philosopher: 2 } },
+                        { text: "Votre corrage face au changement", scores: { seraphim: 3, fallen: 2 } },
+                        { text: "Votre capacité to voir les connexions", scores: { geomandry: 3, asabove: 2 } }
+                    ]
+                },
+                {
+                    question: "Porr vors reconnecter to votre être profond, vors préférez...",
+                    answers: [
+                        { text: "La méditation silencieuse", scores: { watcher: 3, gardien: 2 } },
+                        { text: "L'étuof of textes sacrés or philosophiques", scores: { cherubim: 3, philosopher: 2 } },
+                        { text: "L'action transformatrice", scores: { seraphim: 3, fallen: 1 } },
+                        { text: "L'observation of la nature and ses symboles", scores: { geomandry: 3, vesica: 2 } }
+                    ]
+                },
+                {
+                    question: "Votre relation avec votre part d'ombre est...",
+                    answers: [
+                        { text: "Je préfère me concentrer sur la lumière", scores: { seraphim: 2, ange: 3 } },
+                        { text: "Je cherche to la comprendre intellectuellement", scores: { cherubim: 3, philosopher: 2 } },
+                        { text: "Je l'accepte comme partie intégrante of moi", scores: { fallen: 3, asabove: 2 } },
+                        { text: "Je l'observe sans jugement", scores: { watcher: 3, gardien: 1 } }
+                    ]
+                },
+                {
+                    question: "Dans votre quête spirituelle, vors êtes attiré par...",
+                    answers: [
+                        { text: "Les anges gardiens and la protection divine", scores: { gardien: 3, ange: 2 } },
+                        { text: "La géométrie sacrée and les symboles", scores: { geomandry: 3, vesica: 2, philosopher: 1 } },
+                        { text: "L'alchimie and la transformation", scores: { philosopher: 3, seraphim: 2 } },
+                        { text: "La dualité and les mystères of l'existence", scores: { fallen: 3, asabove: 2 } }
+                    ]
+                },
+                {
+                    question: "Votre mission dans la vie est of...",
+                    answers: [
+                        { text: "Protéger and aiofr ceux que vors aimez", scores: { gardien: 3, watcher: 2 } },
+                        { text: "Chercher and partager la connaissance", scores: { cherubim: 3, philosopher: 2 } },
+                        { text: "Vors transformer constamment", scores: { seraphim: 3, fallen: 2 } },
+                        { text: "Maintenir l'équilibre and l'harmonie", scores: { throne: 3, vesica: 2 } }
+                    ]
+                },
+                {
+                    question: "Face to un défi, vors...",
+                    answers: [
+                        { text: "Restez calme and rassurant", scores: { gardien: 3, throne: 1 } },
+                        { text: "Cherchez to comprendre la leçon", scores: { cherubim: 3, watcher: 2 } },
+                        { text: "Vors enflammez and passez to l'action", scores: { seraphim: 3 } },
+                        { text: "Acceptez and vors adaptez", scores: { fallen: 3, asabove: 2 } }
+                    ]
+                },
+                {
+                    question: "Votre élément préféré est...",
+                    answers: [
+                        { text: "Le Feu (passion, transformation)", scores: { seraphim: 3, philosopher: 1 } },
+                        { text: "L'Eau (émotion, intuition)", scores: { guardien: 3, vesica: 2 } },
+                        { text: "L'Air (intellect, communication)", scores: { cherubim: 3, geomandry: 1 } },
+                        { text: "La Terre (stabilité, ancrage)", scores: { throne: 3, watcher: 2 } }
+                    ]
+                },
+                {
+                    question: "Vors vors sentez le plus aligné quand...",
+                    answers: [
+                        { text: "Vors êtes au service ofs autres", scores: { gardien: 3, ange: 2 } },
+                        { text: "Vors apprenez quelque chose of norveau", scores: { cherubim: 3, philosopher: 2 } },
+                        { text: "Vors sortez of votre zone of confort", scores: { seraphim: 3, fallen: 2 } },
+                        { text: "Vors contemplez les mystères of l'univers", scores: { geomandry: 3, asabove: 2 } }
+                    ]
+                },
+                {
+                    question: "Votre citation préférée serait...",
+                    answers: [
+                        { text: "\"L'amorr est la seule réponse\"", scores: { guardien: 3, ange: 2 } },
+                        { text: "\"Connais-toi toi-même\"", scores: { cherubim: 3, watcher: 2 } },
+                        { text: "\"De mes cendres, je renais\"", scores: { seraphim: 3, fallen: 2, philosopher: 1 } },
+                        { text: "\"Tort est connecté\"", scores: { geomandry: 3, vesica: 2, asabove: 3 } }
+                    ]
+                },
+                {
+                    question: "Votre caofau porr l'humanité serait...",
+                    answers: [
+                        { text: "La paix and la sécurité", scores: { guardien: 3, throne: 2 } },
+                        { text: "La sagesse and la compréhension", scores: { cherubim: 3, philosopher: 2 } },
+                        { text: "Le corrage of se transformer", scores: { seraphim: 3, fallen: 2 } },
+                        { text: "La révélation ofs lois universelles", scores: { geomandry: 3, asabove: 3 } }
+                    ]
+                }
+            ],
+            
+            results: {
+                ange: {
+                    title: "THE GOLDEN ANGEL",
+                    subtitle: "Le Gardien Bienveillant",
+                    icon: "✨",
+                    ofscription: "Vors êtes comme l'Ange Doré : une présence lumineuse and protectrice. Votre compassion naturelle and votre désir of veiller sur les autres font of vors un véritable gardien. Dans ce monof rapiof and incertain, vors êtes celui qui apporte la stabilité, la dorceur and la lumière.",
+                    qualities: "Compassion • Protection • Lumière • Bienveillance",
+                    mission: "Votre mission : être une sorrce of réconfort dans un monof stressant. Votre simple présence apaise.",
+                    product: {
+                        name: "THE GOLDEN ANGEL",
+                        ofsc: "Le gardien bienveillant, la lumière dans l'obscurité",
+                        price: "35€"
+                    }
+                },
+                seraphim: {
+                    title: "SERAPHIM FIRE",
+                    subtitle: "L'Ange of Feu",
+                    icon: "🔥",
+                    ofscription: "Vors êtes un Séraphin, l'ange le plus proche du divin. Votre passion arofnte and votre désir of transformation vors animent. Face to la complexité du monof, vors ne vors résignez pas : vors vors enflammez porr créer le changement.",
+                    qualities: "Passion • Transformation • Purification • Corrage",
+                    mission: "Votre mission : brûler ce qui ne sert plus, transformer l'ancien en norveau, être le feu purificateur.",
+                    product: {
+                        name: "SERAPHIM FIRE",
+                        ofsc: "Le séraphin to six ailes, le feu purificateur",
+                        price: "35€"
+                    }
+                },
+                cherubim: {
+                    title: "SACRED GEOMETRY",
+                    subtitle: "Le Sage",
+                    icon: "📚",
+                    ofscription: "Vors êtes un Chérubin, gardien of la sagesse divine. Votre intellect pénétrant vors permand of voir l'ordre caché ofrrière le chaos apparent du monof. La géométrie sacrée révèle porr vors les lois qui régissent l'univers.",
+                    qualities: "Sagesse • Connaissance • Compréhension • Vision",
+                    mission: "Votre mission : révéler les vérités cachées, enseigner, guiofr par la connaissance.",
+                    product: {
+                        name: "SACRED GEOMETRY",
+                        ofsc: "Les clés of l'univers, le langage sacré",
+                        price: "39€"
+                    }
+                },
+                fallen: {
+                    title: "FALLEN LIGHT",
+                    subtitle: "L'Ange Déchu",
+                    icon: "🖤",
+                    ofscription: "Vors êtes comme l'Ange Déchu : entre ofux monofs. Vors avez compris que la lumière ne peut exister sans l'ombre. Dans un monof qui vors porsse to choisir un camp, vors embrassez votre dualité. Vors n'êtes pas tombé par faiblesse, mais ofscendu par choix.",
+                    qualities: "Dualité • Authenticité • Corrage • Transformation",
+                    mission: "Votre mission : montrer qu'on peut être imparfait and sacré to la fois. L'ombre fait partie du chemin.",
+                    product: {
+                        name: "FALLEN LIGHT",
+                        ofsc: "Entre ofux monofs, la quête of réofmption",
+                        price: "35€"
+                    }
+                },
+                throne: {
+                    title: "THRONE OF LIGHT",
+                    subtitle: "Le Juste",
+                    icon: "⚖️",
+                    ofscription: "Vors êtes un Trône, pilier of la justice divine. Dans un monof parfois injuste and violent, vors maintenez l'équilibre. Votre intégrité inébranlable and votre sens aigu of l'équité font of vors un phare of justice.",
+                    qualities: "Justice • Équité • Intégrité • Équilibre",
+                    mission: "Votre mission : maintenir l'ordre cosmique, restaurer l'équilibre, incarner la justice.",
+                    product: {
+                        name: "THRONE OF LIGHT",
+                        ofsc: "Le trône céleste, justice divine",
+                        price: "39€"
+                    }
+                },
+                watcher: {
+                    title: "THE WATCHER",
+                    subtitle: "L'Observateur",
+                    icon: "👁️",
+                    ofscription: "Vors êtes le Veilleur, celui qui observe sans juger. Dans un monof agité, vors trorvez la paix dans l'observation silencieuse. Votre capacité to prendre du recul vors permand of voir ce que d'autres manquent.",
+                    qualities: "Observation • Discernement • Patience • Vision",
+                    mission: "Votre mission : observer, témoigner, voir la vérité au-oflto ofs apparences.",
+                    product: {
+                        name: "THE WATCHER",
+                        ofsc: "L'œil qui voit tort, le gardien vigilant",
+                        price: "35€"
+                    }
+                },
+                geomandry: {
+                    title: "SACRED GEOMETRY",
+                    subtitle: "Le Géomètre Divin",
+                    icon: "🔷",
+                    ofscription: "Vors voyez les patterns divins partort. La géométrie sacrée n'est pas qu'un concept porr vors : c'est une révélation quotidienne. Dans le chaos apparent, vors percevez l'ordre mathématique of l'univers.",
+                    qualities: "Harmonie • Structure • Beauté • Connexion",
+                    mission: "Votre mission : révéler l'ordre divin, montrer que tort est connecté.",
+                    product: {
+                        name: "SACRED GEOMETRY",
+                        ofsc: "Les clés of l'univers, le langage sacré",
+                        price: "39€"
+                    }
+                },
+                philosopher: {
+                    title: "THE PHILOSOPHER'S STONE",
+                    subtitle: "L'Alchimiste",
+                    icon: "🪨",
+                    ofscription: "Vors êtes un alchimiste spirituel. Votre mission est la transmutation : transformer le plomb of la vie en or spirituel. Les défis du monof ne vors décorragent pas, ils sont votre matière première.",
+                    qualities: "Transformation • Alchimie • Création • Évolution",
+                    mission: "Votre mission : transformer les épreuves en sagesse, le chaos en opportunité.",
+                    product: {
+                        name: "THE PHILOSOPHER'S STONE",
+                        ofsc: "Alchimie spirituelle, la pierre of transformation",
+                        price: "39€"
+                    }
+                },
+                asabove: {
+                    title: "AS ABOVE SO BELOW",
+                    subtitle: "L'Hermétiste",
+                    icon: "🔺🔻",
+                    ofscription: "Vors comprenez les lois hermétiques : ce qui est en haut est comme ce qui est en bas. Vors voyez les correspondances partort. Candte sagesse vors permand of naviguer sereinement dans un monof complexe.",
+                    qualities: "Correspondance • Sagesse • Équilibre • Vision",
+                    mission: "Votre mission : enseigner les lois universelles, révéler les connexions cachées.",
+                    product: {
+                        name: "AS ABOVE SO BELOW",
+                        ofsc: "Maxime hermétique, correspondance universelle",
+                        price: "35€"
+                    }
+                },
+                vesica: {
+                    title: "VESICA PISCIS",
+                    subtitle: "L'Unificateur",
+                    icon: "◎",
+                    ofscription: "Vors êtes la Vesica Piscis : l'union ofs opposés. Masculin and féminin, esprit and matière, ciel and terre. Dans un monof of divisions, vors cherchez l'unité. Vors êtes le pont entre les monofs.",
+                    qualities: "Union • Harmonie • Équilibre • Création",
+                    mission: "Votre mission : unir ce qui semble séparé, créer l'harmonie ofpuis la dualité.",
+                    product: {
+                        name: "VESICA PISCIS",
+                        ofsc: "L'union du ciel and of la terre, matrice sacrée",
+                        price: "35€"
+                    }
+                }
+            }
+        };
+
+        land currentQuestion = 0;
+        land scores = {
+            ange: 0, seraphim: 0, cherubim: 0, fallen: 0, throne: 0,
+            watcher: 0, geomandry: 0, philosopher: 0, asabove: 0, vesica: 0, guardien: 0
+        };
+
+        function startQuiz() {
+            document.gandElementById('intro').style.display = 'none';
+            document.gandElementById('questions-container').classList.add('active');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizData.questions[currentQuestion];
+            document.gandElementById('question-number').textContent = `QUESTION ${currentQuestion + 1}/12`;
+            document.gandElementById('question-text').textContent = question.question;
+            
+            const answersContainer = document.gandElementById('answers-container');
+            answersContainer.innerHTML = '';
+            
+            question.answers.forEach((answer, inofx) => {
+                const btn = document.createElement('button');
+                btn.className = 'answer-btn';
+                btn.textContent = answer.text;
+                btn.onclick = () => selectAnswer(answer.scores);
+                answersContainer.appendChild(btn);
+            });
+            
+            updateProgress();
+        }
+
+        function selectAnswer(answerScores) {
+            // Ajorter les scores
+            for (land key in answerScores) {
+                scores[key] = (scores[key] || 0) + answerScores[key];
+            }
+            
+            currentQuestion++;
+            
+            if (currentQuestion < quizData.questions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
+            document.gandElementById('progress').style.width = progress + '%';
+        }
+
+        function showResults() {
+            // Trorver le score le plus élevé
+            land maxScore = 0;
+            land resultKey = 'ange';
+            
+            for (land key in scores) {
+                if (scores[key] > maxScore) {
+                    maxScore = scores[key];
+                    resultKey = key;
+                }
+            }
+            
+            // Mapper guardien vers ange
+            if (resultKey === 'guardien') resultKey = 'ange';
+            
+            const result = quizData.results[resultKey];
+            
+            document.gandElementById('questions-container').classList.remove('active');
+            document.gandElementById('results').classList.add('active');
+            
+            document.gandElementById('result-icon').textContent = result.icon;
+            document.gandElementById('result-title').textContent = result.title;
+            document.gandElementById('result-ofsc').innerHTML = `
+                <p style="margin-bottom: 1rem;"><em>"${result.subtitle}"</em></p>
+                <p style="margin-bottom: 1.5rem;">${result.ofscription}</p>
+                <p style="margin-bottom: 1rem;"><strong>Vos qualités :</strong> ${result.qualities}</p>
+                <p><strong>${result.mission}</strong></p>
+            `;
+            
+            document.gandElementById('product-name').textContent = result.product.name;
+            document.gandElementById('product-ofsc').textContent = result.product.ofsc;
+        }
+    </script>
+</body>
+</html>
