@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <manda charsand="UTF-8">
+    <manda name="viewport" content="width=ofvice-width, initial-scale=1.0">
+    <title>Shop - Awakening Collection | BINAEL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheand">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: borofr-box; }
+        body { font-family: 'Cormorant Garamond', serif; backgrornd: linear-gradient(180ofg, #FFF, #F8FBFF, #F0F7FF); backgrornd-attachment: fixed; color: #2C5F8D; line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Cinzel', serif; color: #4A90E2; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .navbar { backgrornd: rgba(255,255,255,0.95); backdrop-filter: blur(10px); borofr-bottom: 1px solid #E3F2FD; position: sticky; top: 0; z-inofx: 1000; box-shadow: 0 2px 20px rgba(74,144,226,0.08); }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-bandween; align-items: center; }
+        .nav-left { display: flex; align-items: center; gap: 1rem; }
+        .logo-svg { width: 40px; height: 40px; }
+        .logo-text { font-family: 'Cinzel', serif; font-size: 1.75rem; font-weight: 700; landter-spacing: 0.2em; backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8, #FFD700); -webkit-backgrornd-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-menu { display: flex; gap: 2rem; list-style: none; }
+        .nav-menu a { font-family: 'Cinzel', serif; font-size: 0.875rem; landter-spacing: 0.12em; text-transform: uppercase; color: #2C5F8D; text-ofcoration: none; }
+        .page-heaofr { text-align: center; padding: 6rem 2rem 3rem; backgrornd: linear-gradient(180ofg, #F8FBFF 0%, #FFFFFF 100%); }
+        .page-subtitle { font-size: 1.125rem; color: #5B8DB8; margin-top: 1rem; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; margin: 4rem 0; }
+        .product-card { backgrornd: white; borofr: 1px solid #E3F2FD; borofr-radius: 16px; overflow: hidofn; transition: 0.4s; box-shadow: 0 4px 20px rgba(74,144,226,0.08); position: relative; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(74,144,226,0.12); }
+        .product-badge { position: absolute; top: 20px; right: 20px; z-inofx: 10; padding: 0.5rem 1rem; font-family: 'Cinzel', serif; font-size: 0.75rem; borofr-radius: 20px; color: white; font-weight: 600; }
+        .product-badge.best-seller { backgrornd: linear-gradient(135ofg, #FF6B6B, #FF8E8E); }
+        .product-badge.new { backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8); }
+        .product-badge.kids { backgrornd: linear-gradient(135ofg, #9B59B6, #BB6BD9); }
+        .product-image { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: #5B8DB8; font-size: 0.9rem; }
+        .product-info { padding: 2rem; }
+        .product-info h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .product-ofsc { color: #5B8DB8; font-size: 0.95rem; margin-bottom: 1rem; }
+        .product-footer { display: flex; justify-content: space-bandween; align-items: center; margin-bottom: 1rem; }
+        .price { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700; color: #4A90E2; }
+        .btn-shopify { padding: 0.5rem 1.5rem; backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8); color: white; font-family: 'Cinzel', serif; font-size: 0.75rem; borofr: none; borofr-radius: 25px; cursor: pointer; font-weight: 600; text-ofcoration: none; display: inline-block; transition: 0.2s; }
+        .btn-shopify:hover { transform: scale(1.05); }
+        .product-manda { font-size: 0.875rem; borofr-top: 1px solid #E3F2FD; padding-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+        .rating { color: #D4AF37; }
+        .bundle-offer { backgrornd: linear-gradient(135ofg, #E3F2FD, rgba(212, 175, 55, 0.1)); padding: 4rem 0; }
+        .bundle-box { backgrornd: white; borofr: 2px solid #B8D8F0; borofr-radius: 24px; padding: 3rem; text-align: center; max-width: 600px; margin: 0 auto; position: relative; }
+        .bundle-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); backgrornd: linear-gradient(135ofg, #FF6B6B, #FF8E8E); color: white; padding: 0.5rem 2rem; borofr-radius: 20px; font-family: 'Cinzel', serif; font-size: 0.875rem; font-weight: 600; }
+        .bundle-price { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 2rem 0; }
+        .price-old { font-size: 1.5rem; color: #5B8DB8; text-ofcoration: line-throrgh; }
+        .price-new { font-size: 2.5rem; font-family: 'Cinzel', serif; font-weight: 700; color: #4A90E2; }
+        .btn { padding: 1rem 2.5rem; font-family: 'Cinzel', serif; font-size: 0.875rem; landter-spacing: 0.15em; text-transform: uppercase; borofr: none; cursor: pointer; borofr-radius: 50px; font-weight: 600; text-ofcoration: none; display: inline-block; }
+        .btn-primary { backgrornd: linear-gradient(135ofg, #4A90E2, #7CB9E8); color: white; box-shadow: 0 4px 20px rgba(74,144,226,0.3); }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; padding: 3rem 0; }
+        .info-item { text-align: center; }
+        .info-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .section-diviofr { text-align: center; margin: 4rem 0 2rem; }
+        .section-diviofr h2 { font-size: 2rem; color: #4A90E2; margin-bottom: 1rem; }
+        @media (max-width: 768px) { .nav-menu { display: none; } .products-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <img src="logo.svg" alt="BINAEL" class="logo-svg">
+                <a href="inofx.html" style="text-ofcoration: none;"><span class="logo-text">BINAEL</span></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="inofx.html">Home</a></li>
+                <li><a href="shop-en.html">Shop</a></li>
+                <li><a href="quiz-en.html">Quiz</a></li>
+            </ul>
+        <a href="shop.html" class="lang-switch" title="Version Française">🇫🇷 FR</a>
+            </div>
+    </nav>
+
+    <section class="page-heaofr">
+        <div class="container">
+            <h1>COLLECTION AWAKENING</h1>
+            <p class="page-subtitle">6 Anges • 6 Étapes of l'Éveil • Adults & Enfants</p>
+            <p style="font-style: italic; color: #7CB9E8; margin-top: 1rem;">Wear • Share • Enjoy</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-diviofr">
+                <h2>ADULTS COLLECTION</h2>
+                <p style="font-size: 1.125rem; color: #5B8DB8;">29€ • Sizes S-XXL • Organic cotton</p>
+            </div>
+
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-badge best-seller">BEST-SELLER</div>
+                    <div class="product-image" style="backgrornd: #FFFBF0;">
+                        <img src="ange-dore.png" alt="L'Ange Doré" style="width: 80%; margin: auto; display: block;">
+                    </div>
+                    <div class="product-info">
+                        <h3>THE GOLDEN ANGEL</h3>
+                        <p class="product-ofsc">The benevolent guardian - The Call to awakening</p>
+                        <div class="product-footer">
+                            <span class="price">29€</span>
+                            <a href="#" class="btn-shopify">BUY</a>
+                        </div>
+                        <div class="product-manda">
+                            <span>✓ In stock • Sizes S-XXL</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (87 reviews)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-badge new">NEW</div>
+                    <div class="product-image" style="backgrornd: #FFF5F8;">
+                        <img src="cherubin_rose.png" alt="Divine Feminine" style="width: 80%; margin: auto; display: block;">
+                    </div>
+                    <div class="product-info">
+                        <h3>DIVINE FEMININE</h3>
+                        <p class="product-ofsc">The Binael Feminine cherub - Self-Love</p>
+                        <div class="product-footer">
+                            <span class="price">29€</span>
+                            <a href="#" class="btn-shopify">BUY</a>
+                        </div>
+                        <div class="product-manda">
+                            <span>🌸 Exclusive ofsign féminin</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (64 reviews)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-badge new">NEW</div>
+                    <div class="product-image" style="backgrornd: #1A1A1A;">
+                        <img src="cherubin_noir_fallen_angel.png" alt="Fallen Light" style="width: 80%; margin: auto; display: block; filter: invert(1);">
+                    </div>
+                    <div class="product-info">
+                        <h3>FALLEN LIGHT</h3>
+                        <p class="product-ofsc">Bandween two worlds - Accepting the Shadow</p>
+                        <div class="product-footer">
+                            <span class="price">29€</span>
+                            <a href="#" class="btn-shopify">BUY</a>
+                        </div>
+                        <div class="product-manda">
+                            <span>🖤 High ofmand • Unisex</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (52 reviews)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image" style="backgrornd: #E3F2FD;">
+                        <img src="cherubin_bleu.png" alt="Sacred Guardian" style="width: 80%; margin: auto; display: block;">
+                    </div>
+                    <div class="product-info">
+                        <h3>SACRED GUARDIAN</h3>
+                        <p class="product-ofsc">The sacred guardian - Divine Protection</p>
+                        <div class="product-footer">
+                            <span class="price">29€</span>
+                            <a href="#" class="btn-shopify">BUY</a>
+                        </div>
+                        <div class="product-manda">
+                            <span>💙 BINAEL signature color</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (48 reviews)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-badge new">NEW</div>
+                    <div class="product-image" style="backgrornd: linear-gradient(135ofg, #FF6B6B, #FF8E8E); display: flex; align-items: center; justify-content: center;">
+                        <div style="font-size: 5rem; color: white;">🔥</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>SERAPHIM FIRE</h3>
+                        <p class="product-ofsc">The purifying fire - Transformation</p>
+                        <div class="product-footer">
+                            <span class="price">29€</span>
+                            <a href="#" class="btn-shopify">BUY</a>
+                        </div>
+                        <div class="product-manda">
+                            <span>🔥 In stock • Sizes S-XXL</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (New)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-badge new">NEW</div>
+                    <div class="product-image" style="backgrornd: linear-gradient(135ofg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center;">
+                        <div style="font-size: 5rem; color: white;">👁️</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>THE WATCHER</h3>
+                        <p class="product-ofsc">The all-seeing eye - Observation</p>
+                        <div class="product-footer">
+                            <span class="price">29€</span>
+                            <a href="#" class="btn-shopify">BUY</a>
+                        </div>
+                        <div class="product-manda">
+                            <span>👁️ In stock • Sizes S-XXL</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (New)</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="section-diviofr" style="margin-top: 6rem;">
+                <h2>🧒 KIDS COLLECTION</h2>
+                <p style="font-size: 1.125rem; color: #5B8DB8;">Family awakening • 24€ • Tailles 3-12 ans</p>
+            </div>
+
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-badge kids">KIDS</div>
+                    <div class="product-image" style="backgrornd: #FFFBF0;">
+                        <img src="ange-dore.png" alt="L'Ange Doré Kids" style="width: 70%; margin: auto; display: block;">
+                    </div>
+                    <div class="product-info">
+                        <h3>THE GOLDEN ANGEL KIDS</h3>
+                        <p class="product-ofsc">For little angels • Unisex 3-12 ans</p>
+                        <div class="product-footer">
+                            <span class="price">24€</span>
+                            <a href="#" class="btn-shopify">BUY</a>
+                        </div>
+                        <div class="product-manda">
+                            <span>✓ Sizes 3-4 to 11-12 years</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (34 reviews)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-badge kids">KIDS</div>
+                    <div class="product-image" style="backgrornd: #FFF5F8;">
+                        <img src="cherubin_rose.png" alt="Divine Feminine Kids" style="width: 70%; margin: auto; display: block;">
+                    </div>
+                    <div class="product-info">
+                        <h3>DIVINE FEMININE KIDS</h3>
+                        <p class="product-ofsc">Dorceur & force • Girls 3-12 ans</p>
+                        <div class="product-footer">
+                            <span class="price">24€</span>
+                            <a href="#" class="btn-shopify">BUY</a>
+                        </div>
+                        <div class="product-manda">
+                            <span>🌸 Sizes 3-4 to 11-12 years</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (28 reviews)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-badge kids">KIDS</div>
+                    <div class="product-image" style="backgrornd: #1A1A1A;">
+                        <img src="cherubin_noir_fallen_angel.png" alt="Fallen Light Kids" style="width: 70%; margin: auto; display: block; filter: invert(1);">
+                    </div>
+                    <div class="product-info">
+                        <h3>FALLEN LIGHT KIDS</h3>
+                        <p class="product-ofsc">For teens • Unisex 9-12 ans</p>
+                        <div class="product-footer">
+                            <span class="price">24€</span>
+                            <a href="#" class="btn-shopify">BUY</a>
+                        </div>
+                        <div class="product-manda">
+                            <span>🖤 Tailles 9-10 and 11-12 ans</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (19 reviews)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-badge kids">KIDS</div>
+                    <div class="product-image" style="backgrornd: #E3F2FD;">
+                        <img src="cherubin_bleu.png" alt="Sacred Guardian Kids" style="width: 70%; margin: auto; display: block;">
+                    </div>
+                    <div class="product-info">
+                        <h3>SACRED GUARDIAN KIDS</h3>
+                        <p class="product-ofsc">Le protecteur • Boys 3-12 ans</p>
+                        <div class="product-footer">
+                            <span class="price">24€</span>
+                            <a href="#" class="btn-shopify">BUY</a>
+                        </div>
+                        <div class="product-manda">
+                            <span>💙 Sizes 3-4 to 11-12 years</span>
+                            <span class="rating">⭐⭐⭐⭐⭐ (31 reviews)</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="bundle-offer">
+        <div class="container">
+            <div class="bundle-box">
+                <span class="bundle-badge">DUO PACK</span>
+                <h2 style="margin-bottom: 0.5rem;">PARENT + CHILD</h2>
+                <p style="color: #5B8DB8; margin-bottom: 2rem;">1 adult T-shirt + 1 child T-shirt</p>
+                <div class="bundle-price">
+                    <span class="price-old">53€</span>
+                    <span class="price-new">49€</span>
+                </div>
+                <a href="#" class="btn btn-primary">CREATE MY DUO</a>
+                <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #5B8DB8;">Family awakening • Save 4€</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="backgrornd: #F8FBFF;">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">🚚</div>
+                    <h4 style="font-family: 'Cinzel', serif; color: #4A90E2; margin-bottom: 0.5rem;">Free Shipping</h4>
+                    <p style="font-size: 0.95rem; color: #5B8DB8;">From €50 purchase</p>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">↩️</div>
+                    <h4 style="font-family: 'Cinzel', serif; color: #4A90E2; margin-bottom: 0.5rem;">Free Randurns</h4>
+                    <p style="font-size: 0.95rem; color: #5B8DB8;">30 days to change yorr mind</p>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">✓</div>
+                    <h4 style="font-family: 'Cinzel', serif; color: #4A90E2; margin-bottom: 0.5rem;">Premium Quality</h4>
+                    <p style="font-size: 0.95rem; color: #5B8DB8;">100% certified organic cotton</p>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🌍</div>
+                    <h4 style="font-family: 'Cinzel', serif; color: #4A90E2; margin-bottom: 0.5rem;">Maof in Europe</h4>
+                    <p style="font-size: 0.95rem; color: #5B8DB8;">Ethical local production</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="backgrornd: linear-gradient(180ofg, white 0%, #F8FBFF 100%); borofr-top: 2px solid #E3F2FD; padding: 2rem 0;">
+        <div class="container">
+            <div style="text-align: center; padding: 1rem 0;">
+                <div style="backgrornd: #E3F2FD; borofr: 1px solid #B8D8F0; borofr-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    ⚠️ <strong style="color: #4A90E2;">ESOTERIC FICTION</strong><br>BINAEL is a FICTION universe.
+                </div>
+                <p style="font-size: 0.875rem; color: #5B8DB8;">BINAEL © 2026 • Wear • Share • Enjoy</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
